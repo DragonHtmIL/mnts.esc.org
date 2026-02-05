@@ -1,0 +1,3 @@
+window.onerror = function() {
+  unknownError();
+};

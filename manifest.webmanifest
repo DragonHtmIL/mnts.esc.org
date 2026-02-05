@@ -1,0 +1,29 @@
+{
+  "name": "Events Creator",
+  "short_name": "Events Creator",
+  "description": "Create and manage your events with ease.",
+  "scope": "/mnts.esc.org/",
+  "start_url": "/mnts.esc.org/",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "lang": "en",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "icons": [
+    {
+      "src": "/mnts.esc.org/index_data/textures/freepik_7477497.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "locales": ["en","ru","he"],
+  "ru": {
+    "name": "Создатель мероприятий",
+    "short_name": "Создатель мероприятий"
+  },
+  "he": {
+    "name": "יוצר אירועים",
+    "short_name": "יוצר אירועים"
+  }
+}

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="index_data/textures/system/freepik_7477497.png">
 <title>Event Creator</title>
 <link rel="stylesheet" href="index_data/styles/roots.css">
 <link rel="stylesheet" href="index_data/styles/main.css">
@@ -31,7 +32,7 @@
   <div class="modal-content">
     About this site:<br>
     This site allows you to create and manage countdown events for your favorite games or anime releases. You can add events with titles, descriptions, dates, and associated game or anime names. The events will be displayed with a live countdown timer.<br>
-    This project is gen by AI and is open source. You can find the source code on <a href="https://github.com/DragonHTMIL/TimeShoduls">GitHub</a>
+    This project is gen by AI and is open source. You can find the source code on <a href="https://github.com/DragonHTMIL/mnts.esc.org/">GitHub</a>
     <hr>
     <h3>Usage Info</h3>
     <p>1. Click the calendar button to create a new event.</p>
@@ -54,5 +55,37 @@
 <script src="index_data/scripts/timer.js"></script>
 <!-- importants be bottom and last -->
 <script src="index_data/scripts/window/dom_content_loaded.js"></script>
+<script src="index_data/scripts/window/error.js"></script>
+<script>
+  if(navigator.serviceWorker) {
+    if(window.location.protocol === 'https:') {
+      navigator.serviceWorker.register('/mnts.esc.org/sw.js',{scope: '/mnts.esc.org/'})
+      .then(registration => {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch(error => {
+        return false
+      });
+      document.getElementById("manifestTestLoad").setAttribute('href','/mnts.esc.org/manifest.webmanifest');
+    }else
+    if (window.location.protocol === 'file:') {
+      // Potentially register service worker for local file access (USE WITH CAUTION)
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' }) // Scope might need adjustment
+          .then(registration => {
+            console.log('Service Worker registered for local file with scope:', registration.scope);
+          })
+          .catch(error => {
+            return false
+          });
+          document.getElementById("manifestTestLoad").setAttribute('href','./manifest.webmanifest');
+      } else {
+        console.log('Service workers are not supported in this environment.');
+      }
+    } else {
+      console.log('Service workers are not being registered on non-HTTPS or non-file protocols.');
+    }
+  }
+</script>
 </body>
 </html>
