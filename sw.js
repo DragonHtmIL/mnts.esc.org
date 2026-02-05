@@ -1,6 +1,6 @@
 var GHPATH = '/mnts.esc.org';
 var APP_PREFIX = 'gppwa_';
-var VERSION = "0.0.1-05022026";
+var VERSION = "0.0.2-05022026";
 var URLS = [
   `${GHPATH}/index_data/scripts`,
   `${GHPATH}/index_data/scripts/create_event_card.js`,
