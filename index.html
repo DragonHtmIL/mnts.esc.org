@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Creator</title>
+<link rel="stylesheet" href="index_data/styles/roots.css">
+<link rel="stylesheet" href="index_data/styles/main.css">
+<link rel="stylesheet" href="index_data/styles/modal.css">
+<link rel="stylesheet" href="index_data/styles/events.css">
+</head>
+<body>
+  <header>
+    <h1 class="title-page">Events Scheduler Creator</h1>
+    <button id="infouse">?</button>
+  </header>
+<button id="openModal"><div class="button-bg">🗓️</div><div class="plus-sign">+</div></button>
+<!-- Modal -->
+<div id="eventModal" class="modal">
+  <div class="modal-content">
+    <h3>Create Event</h3>
+    <input id="eventTitle" placeholder="Title" required>
+    <textarea id="eventDesc" placeholder="Description (optional)" style="resize: vertical;"></textarea>
+    <input id="eventDate" type="datetime-local" required><span>(required)</span>
+    <input id="eventGame" placeholder="Anime/Game Name (optional)">
+    <button id="saveEvent">Save</button>
+    <button id="closeModal">Cancel</button>
+  </div>
+</div>
+<div id="useinfoModal" class="modal">
+  <div class="modal-content">
+    About this site:<br>
+    This site allows you to create and manage countdown events for your favorite games or anime releases. You can add events with titles, descriptions, dates, and associated game or anime names. The events will be displayed with a live countdown timer.<br>
+    This project is gen by AI and is open source. You can find the source code on <a href="https://github.com/DragonHTMIL/TimeShoduls">GitHub</a>
+    <hr>
+    <h3>Usage Info</h3>
+    <p>1. Click the calendar button to create a new event.</p>
+    <p>2. Fill in the title and date (required). Description and game or anime name are optional.</p>
+    <p>3. Save the event to see it listed with a countdown.</p>
+    <p>4. Click "Delete" on an event card to remove it.</p>
+    <hr>
+    <strong>Note:</strong> Events are stored in your browser's local storage, so they will persist until you clear it or delete them manually.<br> and removed events cannot be recovered.</p>
+    <button id="closeUseInfo">Close</button>
+  </div>
+</div>
+<div id="eventsContainer"></div>
+<script src="index_data/scripts/registrations.js"></script>
+<script src="index_data/scripts/modal_event.js"></script>
+<script src="index_data/scripts/modal_infouse.js"></script>
+<script src="index_data/scripts/get_next_event_index.js"></script>
+<script src="index_data/scripts/save_event.js"></script>
+<script src="index_data/scripts/render_events.js"></script>
+<script src="index_data/scripts/create_event_card.js"></script>
+<script src="index_data/scripts/timer.js"></script>
+<!-- importants be bottom and last -->
+<script src="index_data/scripts/window/dom_content_loaded.js"></script>
+</body>
+</html>

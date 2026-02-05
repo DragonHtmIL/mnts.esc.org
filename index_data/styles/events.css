@@ -1,0 +1,19 @@
+.event-card {
+  position: relative;
+  background-color: var(--card-background);
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 2px solid var(--card-border);
+}
+.countdown {
+  color: var(--special-color);
+  font-weight: bold;
+  margin-top: 10px;
+}
+.delete-btn {
+  background-color: var(--evt-remove) !important;
+}
+.delete-btn:hover {
+  background-color: var(--evt-remove-hover) !important;
+}

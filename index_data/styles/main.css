@@ -1,0 +1,27 @@
+*,
+*:hover,
+*:focus {
+  transition: .6s;
+  -o-transition: .6s;
+  -moz-transition: .6s;
+  -webkit-transition: .6s;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  background-color: var(--background);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 1vmax;
+}
