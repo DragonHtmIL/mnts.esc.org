@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/x-icon" href="index_data/textures/system/freepik_7477497.png">
+<link rel="canonical" href="https://dragonhtmil.github.io/mnts.esc.org/">
+<link rel="manifest" href="" id="manifestTestLoad">
 <title>Event Creator</title>
 <link rel="stylesheet" href="index_data/styles/roots.css">
 <link rel="stylesheet" href="index_data/styles/main.css">
@@ -44,10 +46,18 @@
     <button id="closeUseInfo">Close</button>
   </div>
 </div>
+<div id="modalErrors" class="modal">
+  <div class="modal-content">
+    <h3>Error</h3>
+    <p id="errorMessage">Something went wrong!</p>
+    <button id="closeErrModal">Close</button>
+  </div>
+</div>
 <div id="eventsContainer"></div>
 <script src="index_data/scripts/registrations.js"></script>
 <script src="index_data/scripts/modal_event.js"></script>
 <script src="index_data/scripts/modal_infouse.js"></script>
+<script src="index_data/scripts/modal_errors.js"></script>
 <script src="index_data/scripts/get_next_event_index.js"></script>
 <script src="index_data/scripts/save_event.js"></script>
 <script src="index_data/scripts/render_events.js"></script>

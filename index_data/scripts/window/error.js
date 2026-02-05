@@ -1,3 +1,1 @@
-window.onerror = function() {
-  unknownError();
-};
+window.onerror = () => modalErrors.style.display = "block";

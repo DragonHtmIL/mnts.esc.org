@@ -5,3 +5,6 @@ const saveEvent = document.getElementById("saveEvent");
 const modalinfouse = document.getElementById("useinfoModal");
 const openInfoModal = document.getElementById("infouse");
 const closeInfoModal = document.getElementById("closeUseInfo");
+const modalErrors = document.getElementById("modalErrors");
+const openErrModal = document.getElementById("openErrModal");
+const closeErrModal = document.getElementById("closeErrModal");
