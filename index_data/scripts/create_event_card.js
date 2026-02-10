@@ -4,10 +4,16 @@ function createEventCard(ev, key) {
   div.innerHTML = `
     <h3>${ev.title}</h3>
     <p>${ev.desc || ""}</p>
-    <small>Game: ${ev.game || "-"}</small>
+    <small>For: ${ev.game || "-"}</small>
     <div class="countdown" data-date="${ev.date}">Calculating...</div>
-    <button class="delete-btn">Delete</button>
+      <div class="btns-container">
+        <button class="edit-btn">Edit</button>
+        <button class="delete-btn">Delete</button>
+      </div>
   `;
+  div.querySelector(".edit-btn").onclick = () => {
+    openEditModal(ev, key);
+  };
   div.querySelector(".delete-btn").onclick = () => {
     if (confirm("Delete this event?")) {
       localStorage.removeItem(key);

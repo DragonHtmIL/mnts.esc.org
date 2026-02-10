@@ -11,6 +11,10 @@
   font-weight: bold;
   margin-top: 10px;
 }
+.btns-container {
+  position: relative;
+  display: flex;
+}
 .delete-btn {
   background-color: var(--evt-remove) !important;
 }
