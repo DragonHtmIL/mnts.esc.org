@@ -12,6 +12,7 @@ saveEvent.onclick = () => {
     alert("Please select a future date");
     return;
   };
+  const data = { title, desc, date, game };
   if (editingKey) {
     localStorage.setItem(editingKey, JSON.stringify(data));
     editingKey = null;
@@ -19,11 +20,6 @@ saveEvent.onclick = () => {
     const index = getNextEventIndex();
     localStorage.setItem(`event_${index}`, JSON.stringify(data));
   }
-  const index = getNextEventIndex();
-  localStorage.setItem(
-    `event_${index}`,
-    JSON.stringify({ title, desc, date, game })
-  );
   modal.style.display = "none";
   saveEvent.textContent = "Save";
   eventTitle.value = "";

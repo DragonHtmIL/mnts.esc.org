@@ -1,6 +1,6 @@
 var GHPATH = '/mnts.esc.org';
 var APP_PREFIX = 'gppwa_';
-var VERSION = "0.0.4-10022026";
+var VERSION = "0.0.5-10022026";
 var URLS = [
   `${GHPATH}/index_data/scripts`,
   `${GHPATH}/index_data/scripts/create_event_card.js`,
@@ -26,7 +26,7 @@ var URLS = [
   `${GHPATH}/index_data/textures/system`,
   `${GHPATH}/index_data/textures/system/freepik_7477497.png`,
   `${GHPATH}/index_data`,
-  `${GHPATH}/index.html`
+  `${GHPATH}/manifest.webmanifest`
 ];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(VERSION).then(cache => cache.addAll(URLS)));
