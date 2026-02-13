@@ -1,6 +1,6 @@
 var GHPATH = '/mnts.esc.org';
 var APP_PREFIX = 'gppwa_';
-var VERSION = "0.0.6-13022026-pre-1";
+var VERSION = "0.0.8-13022026-pre";
 var URLS = [
   `${GHPATH}/index_data/scripts`,
   `${GHPATH}/index_data/scripts/apply_settings.js`,

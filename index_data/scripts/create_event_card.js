@@ -34,6 +34,8 @@ function createEventCard(ev, key) {
         <button class="delete-btn">למחוק</button>
       </div>
   `;
+   div.style.textAlign = "right";
+   div.style.direction = "rtl";
   }
   div.querySelector(".edit-btn").onclick = () => {
     openEditModal(ev, key);
