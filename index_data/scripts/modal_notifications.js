@@ -1,0 +1,1 @@
+closeNotifyModal.onclick = () => modalNotify.style.display = "none";
