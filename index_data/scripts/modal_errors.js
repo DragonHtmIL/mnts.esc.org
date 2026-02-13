@@ -1,1 +1,0 @@
-closeErrModal.onclick = () => modalErrors.style.display = "none";
