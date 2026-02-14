@@ -1,13 +1,16 @@
 var GHPATH = '/mnts.esc.org';
 var APP_PREFIX = 'gppwa_';
-var VERSION = "0.0.8-13022026-pre";
+var VERSION = "0.0.9-14022026";
 var URLS = [
   `${GHPATH}/index_data/scripts`,
   `${GHPATH}/index_data/scripts/apply_settings.js`,
   `${GHPATH}/index_data/scripts/check_settings_changes.js`,
   `${GHPATH}/index_data/scripts/create_event_card.js`,
+  `${GHPATH}/index_data/scripts/export_data.js`,
   `${GHPATH}/index_data/scripts/get_next_event_index.js`,
+  `${GHPATH}/index_data/scripts/import_data.js`,
   `${GHPATH}/index_data/scripts/languages_text_loader.js`,
+  `${GHPATH}/index_data/scripts/mask_clicked.js`,
   `${GHPATH}/index_data/scripts/modal_edit.js`,
   `${GHPATH}/index_data/scripts/modal_event.js`,
   `${GHPATH}/index_data/scripts/modal_infouse.js`,

@@ -26,6 +26,10 @@
         <button id="russian" class="lang-btn" onclick="setActiveRu();checkSettingsChanges();">...</button>
         <button id="hebrew" class="lang-btn" onclick="setActiveHe();checkSettingsChanges();">...</button>
       </div>
+      <hr>
+      <button id="exportEvents">...</button>
+      <button id="importButton">...</button>
+      <input type="file" id="importFile" accept=".json" style="display:none">
       <button id="settingsApplyer" class="apply-text" style="display: none;" onclick="applySettings();">...</button>
       <button id="closeSettings" class="close-text">...</button>
     </div>
@@ -35,14 +39,13 @@
     <p id="emptyTextp">...</p>
     <small id="emptyTextSmall">...</small>
   </div>
-  <!-- Modal -->
   <div id="eventModal" class="modal">
     <div class="modal-content">
       <h3 id="modalTitle">...</h3>
       <input id="eventTitle" placeholder="..." required>
       <textarea id="eventDesc" placeholder="..." style="resize: vertical;"></textarea>
       <input id="eventDate" type="datetime-local" required><span id="requiredText">...</span>
-      <input id="eventGame" placeholder="...">
+      <input id="eventName" placeholder="...">
       <button id="saveEvent" class="save-text">...</button>
       <button id="closeModal" class="cancel-text">...</button>
     </div>
@@ -80,6 +83,9 @@
   <script src="index_data/scripts/set_languages_buttons_active.js"></script>
   <script src="index_data/scripts/check_settings_changes.js"></script>
   <script src="index_data/scripts/apply_settings.js"></script>
+  <script src="index_data/scripts/export_data.js"></script>
+  <script src="index_data/scripts/import_data.js"></script>
+  <script src="index_data/scripts/mask_clicked.js"></script>
   <!-- importants be bottom and last -->
   <script src="index_data/scripts/window/dom_content_loaded.js"></script>
   <script src="index_data/scripts/window/error.js"></script>

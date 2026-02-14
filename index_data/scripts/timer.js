@@ -18,11 +18,11 @@ setInterval(() => {
     const m = Math.floor(diff / 60000) % 60;
     const s = Math.floor(diff / 1000) % 60;
     if(localStorage.getItem("lang") === "en") {
-      el.textContent = "Starts in: " + `${d}d ${h}h ${m}m ${s}s` + " (" + el.dataset.date + ")";
+      el.textContent = "Starts in: " + `${d}d ${h}h ${m}m ${s}s` + "\n (" + el.dataset.date + ")";
     } else if(localStorage.getItem("lang") === "ru") {
-      el.textContent = "Начинается через: " + `${d}д ${h}ч ${m}м ${s}с` + " (" + el.dataset.date + ")";
+      el.textContent = "Начинается через: " + `${d}д ${h}ч ${m}м ${s}с` + "\n (" + el.dataset.date + ")";
     } else if(localStorage.getItem("lang") === "he") {
-      el.textContent = "מתחיל בעוד: " + `${d} ימים ${h} שעות ${m} דקות ${s} שניות` + " (" + el.dataset.date + ")";
+      el.textContent = "מתחיל בעוד: " + `${d} ימים ${h} שעות ${m} דקות ${s} שניות` + "\n (" + el.dataset.date + ")";
        el.style.textAlign = "right";
        el.style.direction = "rtl";
     }

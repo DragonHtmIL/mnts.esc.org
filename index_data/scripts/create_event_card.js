@@ -5,7 +5,7 @@ function createEventCard(ev, key) {
   div.innerHTML = `
     <h3>${ev.title}</h3>
     <p>${ev.desc || ""}</p>
-    <small>For: ${ev.game || "-"}</small>
+    <small>For: ${ev.name || "-"}</small>
     <div class="countdown" data-date="${ev.date}">Calculating...</div>
       <div class="btns-container">
         <button class="edit-btn">Edit</button>
@@ -16,7 +16,7 @@ function createEventCard(ev, key) {
     div.innerHTML = `
     <h3>${ev.title}</h3>
     <p>${ev.desc || ""}</p>
-    <small>Для: ${ev.game || "-"}</small>
+    <small>Для: ${ev.name || "-"}</small>
     <div class="countdown" data-date="${ev.date}">Считаеца...</div>
       <div class="btns-container">
         <button class="edit-btn">Редактировать</button>
@@ -27,7 +27,7 @@ function createEventCard(ev, key) {
     div.innerHTML = `
     <h3>${ev.title}</h3>
     <p>${ev.desc || ""}</p>
-    <small>עבור: ${ev.game || "-"}</small>
+    <small>עבור: ${ev.name || "-"}</small>
     <div class="countdown" data-date="${ev.date}">מחשב...</div>
       <div class="btns-container">
         <button class="edit-btn">לערוך</button>
@@ -74,6 +74,7 @@ function createEventCard(ev, key) {
     confirmNoButton.onclick = () => {
       confirmButtonsContainer.style.display = "none";
       modalNotify.style.display = "none";
+      closeNotifyModal.style.display = "block";
     }
   };
   return div;

@@ -2,7 +2,7 @@ saveEvent.onclick = () => {
   const title = eventTitle.value.trim();
   const desc = eventDesc.value.trim();
   const date = eventDate.value;
-  const game = eventGame.value.trim();
+  const name = eventName.value.trim();
   if (!title || !date) {
     modalNotify.style.display = "block";
       if(localStorage.getItem("lang") === "en") {
@@ -40,7 +40,7 @@ saveEvent.onclick = () => {
       }
     return;
   };
-  const data = { title, desc, date, game };
+  const data = { title, desc, date, name };
   if (editingKey) {
     localStorage.setItem(editingKey, JSON.stringify(data));
     editingKey = null;
@@ -59,6 +59,6 @@ saveEvent.onclick = () => {
   eventTitle.value = "";
   eventDesc.value = "";
   eventDate.value = "";
-  eventGame.value = "";
+  eventName.value = "";
   renderEvents();
 };

@@ -3,7 +3,7 @@ function openEditModal(ev, key) {
   eventTitle.value = ev.title;
   eventDesc.value = ev.desc || "";
   eventDate.value = ev.date;
-  eventGame.value = ev.game || "";
+  eventName.value = ev.name || "";
   modal.style.display = "block";
   if(localStorage.getItem("lang") === "en") {
     saveEvent.textContent = "Save Changes";
@@ -22,7 +22,7 @@ closeModal.onclick = () => {
   eventTitle.value = "";
   eventDesc.value = "";
   eventDate.value = "";
-  eventGame.value = "";
+  eventName.value = "";
   if(localStorage.getItem("lang") === "en") {
     saveEvent.textContent = "Save";
     modalTitle.textContent = "Create Event";
