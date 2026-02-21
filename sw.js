@@ -1,6 +1,6 @@
 var GHPATH = '/mnts.esc.org';
 var APP_PREFIX = 'gppwa_';
-var VERSION = "0.0.9-14022026";
+var VERSION = "0.1.0-21022026";
 var URLS = [
   `${GHPATH}/index_data/scripts`,
   `${GHPATH}/index_data/scripts/apply_settings.js`,
@@ -12,11 +12,9 @@ var URLS = [
   `${GHPATH}/index_data/scripts/languages_text_loader.js`,
   `${GHPATH}/index_data/scripts/mask_clicked.js`,
   `${GHPATH}/index_data/scripts/modal_edit.js`,
-  `${GHPATH}/index_data/scripts/modal_event.js`,
-  `${GHPATH}/index_data/scripts/modal_infouse.js`,
-  `${GHPATH}/index_data/scripts/modal_notifications.js`,
-  `${GHPATH}/index_data/scripts/modal_settings.js`,
-  `${GHPATH}/index_data/scripts/open_modal.js`,
+  `${GHPATH}/index_data/scripts/modals_closers.js`,
+  `${GHPATH}/index_data/scripts/modals_openers.js`,
+  `${GHPATH}/index_data/scripts/notifications.js`,
   `${GHPATH}/index_data/scripts/registrations.js`,
   `${GHPATH}/index_data/scripts/render_events.js`,
   `${GHPATH}/index_data/scripts/save_event.js`,
@@ -55,4 +53,25 @@ self.addEventListener('fetch', event => {
     return fetch(event.request);
     })
   );
+});
+self.addEventListener('message', event => {
+  const data = event.data;
+  if (data && data.type === 'SHOW_NOTIFICATION') {
+    const options = {
+      body: data.body,
+      icon: data.icon || `${GHPATH}/index_data/textures/system/freepik_7477497.png`,
+      tag: data.tag || 'event-notif'
+    };
+    self.registration.showNotification(data.title, options);
+  }
+});
+self.addEventListener('notificationclick', event => {
+  event.notification.close();
+  event.waitUntil(clients.matchAll({type: 'window'}).then(clientList => {
+    if (clientList.length > 0) {
+      clientList[0].focus();
+    } else {
+      clients.openWindow('/');
+    }
+  }));
 });
