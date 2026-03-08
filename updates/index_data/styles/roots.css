@@ -1,4 +1,29 @@
 :root {
+  /* Light Mode (Default) */
+  --background: #f0f0f0ff;
+  --text-color: #111111ff;
+  --card-background: #ffffffff;
+  --card-border: #ddddddff;
+  --evt-remove: #ff4f4fff;
+  --evt-remove-hover: #d43f3fff;
+  --special-color: #007affff;
+  --inner-background: #0000004d;
+  --modal-background: #ffffffff;
+  --inputs-background: #e0e0e0ff;
+  --inputs-background-hover: #d0d0d0ff;
+  --text-important: #ff3b30ff;
+  --header-background: #ffffffcc;
+  --evt-select: #e0e0e0ff;
+  --evt-select-hover: #c0c0c0ff;
+  --evt-select-active: #007affff;
+  --settings-icon: url('../textures/setting.png');
+  --settings-icon-hover: url('../textures/setting_filled.png');
+  --info-icon: url('../textures/info.png');
+  --info-icon-hover: url('../textures/info_filled.png');
+}
+
+[data-theme="dark"] {
+  /* Dark Mode */
   --background: #0b0b0bff;
   --text-color: #ffffffff;
   --card-background: #141414ff;
@@ -11,7 +36,7 @@
   --inputs-background: #222222ff;
   --inputs-background-hover: #333333ff;
   --text-important: #ff4f4fff;
-  --header-background: #313131ff;
+  --header-background: #1a1a1aff;
   --evt-select: #333333ff;
   --evt-select-hover: #0f5a0fff;
   --evt-select-active: #16a016ff;

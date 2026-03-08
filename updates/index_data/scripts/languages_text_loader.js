@@ -17,6 +17,10 @@ function loadTexts() {
   var a015 = document.getElementById("modalTitle");
   var a016 = document.getElementById("importantLabel");
   var a017 = document.getElementById("exitAppBtn");
+  var a018 = document.getElementById("themeTitle");
+  var a019 = document.getElementById("lightTheme");
+  var a020 = document.getElementById("darkTheme");
+
   const dateInput = document.getElementById("eventDate");
   const a000_set = document.getElementsByClassName("close-text");
   const a001_set = document.getElementsByClassName("cancel-text");
@@ -24,11 +28,13 @@ function loadTexts() {
   const a003_set = document.getElementsByClassName("apply-text");
   const a004_set = document.getElementsByClassName("yes-text");
   const a005_set = document.getElementsByClassName("no-text");
+
   let lang = localStorage.getItem("lang");
   if (!lang) {
     lang = "en";
     localStorage.setItem("lang", "en");
   }
+
   if(lang === "en") {
     if (a000) a000.innerHTML = "Event Creator";
     if (a001) a001.innerHTML = "Export Events in File";
@@ -53,7 +59,11 @@ function loadTexts() {
     if (a014) a014.innerHTML = "Create your event to get started";
     if (a015) a015.innerHTML = "Create Event";
     if (a016) a016.innerHTML = "Important Alert (Bypass Silence/DND)";
-    if (a017) a017.innerHTML = "Exit";
+    if (a017) a017.innerHTML = "Exit App";
+    if (a018) a018.innerHTML = "Theme";
+    if (a019) a019.innerHTML = "Light";
+    if (a020) a020.innerHTML = "Dark";
+
     for (let i = 0; i < a000_set.length; i++) {
       a000_set[i].textContent = "Close";
     }
@@ -98,7 +108,11 @@ function loadTexts() {
     if (a014) a014.innerHTML = "Создайте свое событие, чтобы начать";
     if (a015) a015.innerHTML = "Создать событие";
     if (a016) a016.innerHTML = "Важное оповещение (обход беззвучного режима/DND)";
-    if (a017) a017.innerHTML = "Выйти";
+    if (a017) a017.innerHTML = "Выйти из приложения";
+    if (a018) a018.innerHTML = "Тема";
+    if (a019) a019.innerHTML = "Светлая";
+    if (a020) a020.innerHTML = "Темная";
+
     for (let i = 0; i < a000_set.length; i++) {
       a000_set[i].textContent = "Закрыть";
     }
@@ -167,7 +181,7 @@ function loadTexts() {
         a011.style.textAlign = "right";
         a011.style.direction = "rtl";
     }
-    if (a012) a012.innerHTML = "יבוא אירועים מקובץ";
+    if (a012) a012.innerHTML = "ייבוא ​​אירועים מקובץ";
     if (a013) a013.innerHTML = "עדיין אין אירועים";
     if (a014) a014.innerHTML = "צרו את האירוע שלכם כדי להתחיל";
     if (a015) {
@@ -180,8 +194,17 @@ function loadTexts() {
         a016.style.direction = "rtl";
     }
     if (a017) {
-        a017.innerHTML = "יציאה";
+        a017.innerHTML = "יציאה מהאפליקציה";
+        a017.style.textAlign = "right";
+        a017.style.direction = "rtl";
     }
+    if (a018) {
+        a018.innerHTML = "נושא";
+        a018.style.textAlign = "right";
+    }
+    if (a019) a019.innerHTML = "בהיר";
+    if (a020) a020.innerHTML = "כהה";
+
     for (let i = 0; i < a000_set.length; i++) {
       a000_set[i].textContent = "לסגור";
     }
