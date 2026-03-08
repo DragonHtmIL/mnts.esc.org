@@ -12,9 +12,15 @@ window.addEventListener("load", function() {
   if (theme === "dark") {
     document.documentElement.setAttribute("data-theme", "dark");
     if (document.getElementById("darkTheme")) document.getElementById("darkTheme").classList.add("active");
+    if (window.Android && window.Android.setSystemBarsColor) {
+      window.Android.setSystemBarsColor(true);
+    }
   } else {
     document.documentElement.removeAttribute("data-theme");
     if (document.getElementById("lightTheme")) document.getElementById("lightTheme").classList.add("active");
+    if (window.Android && window.Android.setSystemBarsColor) {
+      window.Android.setSystemBarsColor(false);
+    }
   }
 
   loadTexts();
