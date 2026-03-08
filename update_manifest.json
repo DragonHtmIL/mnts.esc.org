@@ -1,5 +1,5 @@
 {
-  "version": "1.0.2",
+  "version": "1.0.3",
   "baseUrl": "https://raw.githubusercontent.com/DragonHtmIL/mnts.esc.org/updates/",
   "files": [
     "index.html",
@@ -38,4 +38,5 @@
     "index_data/textures/dark/setting_filled.png"
   ]
 }
+
 
