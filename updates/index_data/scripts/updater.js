@@ -1,5 +1,5 @@
 const CURRENT_VERSION_KEY = "app_version";
-const MANIFEST_URL = "https://raw.githubusercontent.com/DragonHTMIL/mnts.esc.org/main/update_manifest.json";
+const MANIFEST_URL = "https://raw.githubusercontent.com/DragonHtmIL/mnts.esc.org/refs/heads/main/update_manifest.json";
 
 async function checkForUpdates() {
     try {
