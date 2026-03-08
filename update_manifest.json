@@ -1,6 +1,6 @@
 {
   "version": "1.0.3",
-  "baseUrl": "https://raw.githubusercontent.com/DragonHtmIL/mnts.esc.org/updates/",
+  "baseUrl": "https://raw.githubusercontent.com/DragonHtmIL/mnts.esc.org/refs/heads/main/updates/",
   "files": [
     "index.html",
     "index_data/scripts/window/dom_content_loaded.js",
@@ -38,5 +38,6 @@
     "index_data/textures/dark/setting_filled.png"
   ]
 }
+
 
 
