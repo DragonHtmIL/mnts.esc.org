@@ -20,7 +20,6 @@ function loadTexts() {
   var a018 = document.getElementById("themeTitle");
   var a019 = document.getElementById("lightTheme");
   var a020 = document.getElementById("darkTheme");
-
   const dateInput = document.getElementById("eventDate");
   const a000_set = document.getElementsByClassName("close-text");
   const a001_set = document.getElementsByClassName("cancel-text");
@@ -28,13 +27,11 @@ function loadTexts() {
   const a003_set = document.getElementsByClassName("apply-text");
   const a004_set = document.getElementsByClassName("yes-text");
   const a005_set = document.getElementsByClassName("no-text");
-
   let lang = localStorage.getItem("lang");
   if (!lang) {
     lang = "en";
     localStorage.setItem("lang", "en");
   }
-
   if(lang === "en") {
     if (a000) a000.innerHTML = "Event Creator";
     if (a001) a001.innerHTML = "Export Events in File";
@@ -63,7 +60,6 @@ function loadTexts() {
     if (a018) a018.innerHTML = "Theme";
     if (a019) a019.innerHTML = "Light";
     if (a020) a020.innerHTML = "Dark";
-
     for (let i = 0; i < a000_set.length; i++) {
       a000_set[i].textContent = "Close";
     }
@@ -160,7 +156,7 @@ function loadTexts() {
     }
     if (a006) a006.innerHTML = "עברית";
     if (a007) a007.innerHTML = "(נדרש)";
-    if (dateInput) dateInput.style.width = "calc(100% - 70px)";
+    if (dateInput) dateInput.style.width = "calc(100% - 69px)";
     if (a008) {
         a008.placeholder = "כותרת";
         a008.style.textAlign = "right";
@@ -181,7 +177,7 @@ function loadTexts() {
         a011.style.textAlign = "right";
         a011.style.direction = "rtl";
     }
-    if (a012) a012.innerHTML = "ייבוא ​​אירועים מקובץ";
+    if (a012) a012.innerHTML = "יבוא אירועים מקובץ";
     if (a013) a013.innerHTML = "עדיין אין אירועים";
     if (a014) a014.innerHTML = "צרו את האירוע שלכם כדי להתחיל";
     if (a015) {
@@ -194,9 +190,7 @@ function loadTexts() {
         a016.style.direction = "rtl";
     }
     if (a017) {
-        a017.innerHTML = "יציאה מהאפליקציה";
-        a017.style.textAlign = "right";
-        a017.style.direction = "rtl";
+        a017.innerHTML = "יציאה";
     }
     if (a018) {
         a018.innerHTML = "נושא";

@@ -1,6 +1,5 @@
 function checkSettingsChanges() {
   let settingsChanged = false;
-
   function checkSettingCategory(elementsMap, localStorageKey) {
     const storedValue = localStorage.getItem(localStorageKey);
     let activeValue = null;
@@ -16,8 +15,6 @@ function checkSettingsChanges() {
       settingsChanged = true;
     }
   }
-
-  // Check language changes
   checkSettingCategory(
     [
       { id: "english", localStorageValue: "en" },
@@ -26,8 +23,6 @@ function checkSettingsChanges() {
     ],
     "lang"
   );
-
-  // Check theme changes
   checkSettingCategory(
     [
       { id: "lightTheme", localStorageValue: "light" },
@@ -35,7 +30,6 @@ function checkSettingsChanges() {
     ],
     "theme"
   );
-
   document.getElementById("settingsApplyer").style.display =
     settingsChanged ? "block" : "none";
 }

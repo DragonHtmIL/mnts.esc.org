@@ -66,10 +66,12 @@ input, textarea, button {
   color: var(--text-color);
   border: none;
   border-radius: 5px;
+  transform: scale(1);
 }
 input:hover, textarea:hover, button:hover,
 input:focus, textarea:focus, button:focus {
   background-color: var(--inputs-background-hover);
+  transform: scale(1.03);
 }
 button, button:hover, button:focus {
   cursor: pointer;
@@ -117,6 +119,10 @@ span {
   border: 2px solid var(--card-border);
   border-left: none;
 }
+.event-card.predelete {
+  border: 2px solid var(--evt-remove-hover);
+  border-left: none;
+}
 .countdown {
   color: var(--special-color);
   font-weight: bold;
@@ -126,6 +132,9 @@ span {
 .btns-container {
   position: relative;
   display: flex;
+}
+.btns-container button {
+  margin: 5px;
 }
 .delete-btn {
   background-color: var(--evt-remove) !important;
@@ -182,12 +191,14 @@ span {
   display: flex;
 }
 .buttons-list button {
+  margin: 5px;
   background-color: var(--evt-select);
 }
 .buttons-list button:hover {
   background-color: var(--evt-select-hover);
 }
 button.active {
+  transform: scale(1);
   background-color: var(--evt-select-active) !important;
 }
 .title-page {
@@ -204,4 +215,10 @@ hr {
 }
 #notificationMessage {
   white-space: pre-line;
+}
+#confirmYes.red {
+  background-color: var(--evt-remove);
+}
+#confirmYes.red:hover {
+  background-color: var(--evt-remove-hover);
 }

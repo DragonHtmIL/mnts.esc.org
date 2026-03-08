@@ -8,17 +8,14 @@ function applySettings() {
       }
     }
   }
-
   saveActive([
     { id: "english", value: "en" },
     { id: "russian", value: "ru" },
     { id: "hebrew", value: "he" }
   ], "lang");
-
   saveActive([
     { id: "lightTheme", value: "light" },
     { id: "darkTheme", value: "dark" }
   ], "theme");
-
   window.location.reload();
 };

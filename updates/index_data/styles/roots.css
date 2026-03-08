@@ -3,8 +3,8 @@
   --text-color: #111111ff;
   --card-background: #ffffffff;
   --card-border: #ddddddff;
-  --evt-remove: #ff4f4fff;
-  --evt-remove-hover: #d43f3fff;
+  --evt-remove: #a0161650;
+  --evt-remove-hover: #a01616ff;
   --special-color: #007affff;
   --inner-background: #0000004d;
   --modal-background: #ffffffff;
@@ -13,7 +13,7 @@
   --text-important: #ff3b30ff;
   --header-background: #ffffffcc;
   --evt-select: #e0e0e0ff;
-  --evt-select-hover: #c0c0c0ff;
+  --evt-select-hover: #007bff50;
   --evt-select-active: #007affff;
   --settings-icon: url('../textures/light/setting.png');
   --settings-icon-hover: url('../textures/light/setting_filled.png');
@@ -25,7 +25,7 @@
   --text-color: #ffffffff;
   --card-background: #141414ff;
   --card-border: #333333ff;
-  --evt-remove: #5a0f0fff;
+  --evt-remove: #a0161650;
   --evt-remove-hover: #a01616ff;
   --special-color: #4fa4ffff;
   --inner-background: #000000b3;
@@ -35,8 +35,8 @@
   --text-important: #ff4f4fff;
   --header-background: #1a1a1aff;
   --evt-select: #333333ff;
-  --evt-select-hover: #0f5a0fff;
-  --evt-select-active: #16a016ff;
+  --evt-select-hover: #007bff50;
+  --evt-select-active: #007affff;
   --settings-icon: url('../textures/dark/setting.png');
   --settings-icon-hover: url('../textures/dark/setting_filled.png');
   --info-icon: url('../textures/dark/info.png');

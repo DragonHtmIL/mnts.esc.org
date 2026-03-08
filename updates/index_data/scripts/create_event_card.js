@@ -66,6 +66,7 @@ function createEventCard(ev, key) {
        notificationMessage.style.textAlign = "right";
        notificationMessage.style.direction = "rtl";
     }
+    confirmButtons.classList.add("red");
     confirmButtons.onclick = () => {
       localStorage.removeItem(key);
       renderEvents();
@@ -73,12 +74,14 @@ function createEventCard(ev, key) {
       modalNotify.style.display = "none";
       closeNotifyModal.style.display = "block";
       document.body.style.overflow = "auto";
+      confirmButtons.classList.remove("red");
     }
     confirmNoButton.onclick = () => {
       confirmButtonsContainer.style.display = "none";
       modalNotify.style.display = "none";
       closeNotifyModal.style.display = "block";
       document.body.style.overflow = "auto";
+      confirmButtons.classList.remove("red");
     }
   };
   return div;
