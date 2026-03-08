@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "baseUrl": "https://raw.githubusercontent.com/DragonHtmIL/mnts.esc.org/updates/",
   "files": [
     "index.html",
@@ -28,9 +28,13 @@
     "index_data/styles/roots.css",
     "index_data/styles/styles.css",
     "index_data/textures/system/freepik_7477497.png",
-    "index_data/textures/info.png",
-    "index_data/textures/info_filled.png",
-    "index_data/textures/setting.png",
-    "index_data/textures/setting_filled.png"
+    "index_data/textures/light/info.png",
+    "index_data/textures/light/info_filled.png",
+    "index_data/textures/light/setting.png",
+    "index_data/textures/light/setting_filled.png",
+    "index_data/textures/dark/info.png",
+    "index_data/textures/dark/info_filled.png",
+    "index_data/textures/dark/setting.png",
+    "index_data/textures/dark/setting_filled.png"
   ]
 }
