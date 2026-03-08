@@ -49,8 +49,8 @@ function loadTexts() {
     if (a009) a009.placeholder = "Description (optional)";
     if (a010) a010.placeholder = "Anime/Game/Manga/Manhua/Company Name (optional)";
     if (a011) {
-        a011.innerHTML = "About this site:<br>";
-        a011.innerHTML += "This site allows you to create and manage countdown events for your favorite games or anime releases. You can add events with titles, descriptions, dates, and associated game or anime names. The events will be displayed with a live countdown timer.<br>";
+        a011.innerHTML = "About this app:<br>";
+        a011.innerHTML += "This app allows you to create and manage countdown events for your favorite games or anime releases. You can add events with titles, descriptions, dates, and associated game or anime names. The events will be displayed with a live countdown timer.<br>";
         a011.innerHTML += "This project is gen by AI and is open source. You can find the source code on <a href=\"https://github.com/DragonHTMIL/mnts.esc.org/\">GitHub</a>";
         a011.innerHTML += "<hr><p><strong>Note:</strong> Events are stored in your browser's local storage, so they will persist until you clear it or delete them manually.<br> and removed events cannot be recovered.</p>";
     }
@@ -98,8 +98,8 @@ function loadTexts() {
     if (a009) a009.placeholder = "Описание (необязательно)";
     if (a010) a010.placeholder = "Название аниме/игры/Манга/Манхуа/Компания (необязательно)";
     if (a011) {
-        a011.innerHTML = "О сайте:<br>";
-        a011.innerHTML += "Этот сайт позволяет создавать и управлять событиями обратного отсчета для ваших любимых игр или релизов аниме. Вы можете добавлять события с названиями, описаниями, датами и связанными названиями игр или аниме. События будут отображаться с живым таймером обратного отсчета.<br>";
+        a011.innerHTML = "О приложении:<br>";
+        a011.innerHTML += "Этот приложение позволяет создавать и управлять событиями обратного отсчета для ваших любимых игр или релизов аниме. Вы можете добавлять события с названиями, описаниями, датами и связанными названиями игр или аниме. События будут отображаться с живым таймером обратного отсчета.<br>";
         a011.innerHTML += "Этот проект сгенерирован ИИ и является открытым исходным кодом. Вы можете найти исходный код на <a href=\"https://github.com/DragonHTMIL/mnts.esc.org/\">GitHub</a>";
         a011.innerHTML += "<hr><p><strong>Примечание:</strong> События хранятся в локальном хранилище вашего браузера, поэтому они будут сохраняться, пока вы не очистите его или не удалите их вручную.<br> и удаленные события не могут быть восстановлены.</p>";
     }
@@ -174,8 +174,8 @@ function loadTexts() {
         a010.style.textAlign = "right";
     }
     if (a011) {
-        a011.innerHTML = "על האתר הזה:<br>";
-        a011.innerHTML += "אתר זה מאפשר לכם ליצור ולנהל אירועי ספירה לאחור למשחקים האהובים עליכם או להוצאות אנימה. אתם יכולים להוסיף אירועים עם כותרות, תיאורים, תאריכים ושמות משחקים או אנימה קשורים. האירועים יוצגו עם טיימר ספירה לאחור חי.<br>";
+        a011.innerHTML = "על האפליקציה הזו:<br>";
+        a011.innerHTML += "אפליקציה זו מאפשרת לכם ליצור ולנהל אירועי ספירה לאחור למשחקים האהובים עליכם או להוצאות אנימה. אתם יכולים להוסיף אירועים עם כותרות, תיאורים, תאריכים ושמות משחקים או אנימה קשורים. האירועים יוצגו עם טיימר ספירה לאחור חי.<br>";
         a011.innerHTML += "פרויקט זה נוצר על ידי AI והוא קוד פתוח. אתם יכולים למצוא את קוד המקור ב- <a href=\"https://github.com/DragonHTMIL/mnts.esc.org/\">GitHub</a>";
         a011.innerHTML += "<hr><p><strong>הערה:</strong> אירועים מאוחסנים באחסון המקומי של הדפדפן שלכם, כך שהם יישארו עד שתנקו אותו או תמחקו אותם ידנית.<br> ואירועים שנמחקו לא ניתן לשחזר.</p>";
         a011.style.textAlign = "right";

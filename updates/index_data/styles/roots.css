@@ -1,5 +1,4 @@
 :root {
-  /* Light Mode (Default) */
   --background: #f0f0f0ff;
   --text-color: #111111ff;
   --card-background: #ffffffff;
@@ -16,14 +15,12 @@
   --evt-select: #e0e0e0ff;
   --evt-select-hover: #c0c0c0ff;
   --evt-select-active: #007affff;
-  --settings-icon: url('../textures/setting.png');
-  --settings-icon-hover: url('../textures/setting_filled.png');
-  --info-icon: url('../textures/info.png');
-  --info-icon-hover: url('../textures/info_filled.png');
+  --settings-icon: url('../textures/light/setting.png');
+  --settings-icon-hover: url('../textures/light/setting_filled.png');
+  --info-icon: url('../textures/light/info.png');
+  --info-icon-hover: url('../textures/light/info_filled.png');
 }
-
 [data-theme="dark"] {
-  /* Dark Mode */
   --background: #0b0b0bff;
   --text-color: #ffffffff;
   --card-background: #141414ff;
@@ -40,8 +37,8 @@
   --evt-select: #333333ff;
   --evt-select-hover: #0f5a0fff;
   --evt-select-active: #16a016ff;
-  --settings-icon: url('../textures/setting.png');
-  --settings-icon-hover: url('../textures/setting_filled.png');
-  --info-icon: url('../textures/info.png');
-  --info-icon-hover: url('../textures/info_filled.png');
+  --settings-icon: url('../textures/dark/setting.png');
+  --settings-icon-hover: url('../textures/dark/setting_filled.png');
+  --info-icon: url('../textures/dark/info.png');
+  --info-icon-hover: url('../textures/dark/info_filled.png');
 }
