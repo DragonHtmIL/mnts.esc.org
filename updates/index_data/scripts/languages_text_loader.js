@@ -20,6 +20,7 @@ function loadTexts() {
   var a018 = document.getElementById("themeTitle");
   var a019 = document.getElementById("lightTheme");
   var a020 = document.getElementById("darkTheme");
+  var a021 = document.getElementById("searchBar");
   const dateInput = document.getElementById("eventDate");
   const a000_set = document.getElementsByClassName("close-text");
   const a001_set = document.getElementsByClassName("cancel-text");
@@ -41,7 +42,7 @@ function loadTexts() {
     if (a005) a005.innerHTML = "Russian<br>(Русский)";
     if (a006) a006.innerHTML = "Hebrew<br>(עברית)";
     if (a007) a007.innerHTML = "(required)";
-    if (dateInput) dateInput.style.width = "calc(100% - 96px)";
+    if (dateInput) dateInput.style.width = "calc(100% - 97px)";
     if (a008) a008.placeholder = "Title";
     if (a009) a009.placeholder = "Description (optional)";
     if (a010) a010.placeholder = "Anime/Game/Manga/Manhua/Company Name (optional)";
@@ -60,6 +61,7 @@ function loadTexts() {
     if (a018) a018.innerHTML = "Theme";
     if (a019) a019.innerHTML = "Light";
     if (a020) a020.innerHTML = "Dark";
+    if (a021) a021.placeholder = "Search...";
     for (let i = 0; i < a000_set.length; i++) {
       a000_set[i].textContent = "Close";
     }
@@ -89,7 +91,7 @@ function loadTexts() {
     if (a005) a005.innerHTML = "Русский";
     if (a006) a006.innerHTML = "Иврит<br>(עברית)";
     if (a007) a007.innerHTML = "(обязательно)";
-    if (dateInput) dateInput.style.width = "calc(100% - 130px)";
+    if (dateInput) dateInput.style.width = "calc(100% - 131px)";
     if (a008) a008.placeholder = "Название";
     if (a009) a009.placeholder = "Описание (необязательно)";
     if (a010) a010.placeholder = "Название аниме/игры/Манга/Манхуа/Компания (необязательно)";
@@ -108,7 +110,7 @@ function loadTexts() {
     if (a018) a018.innerHTML = "Тема";
     if (a019) a019.innerHTML = "Светлая";
     if (a020) a020.innerHTML = "Темная";
-
+    if (a021) a021.placeholder = "Поиск...";
     for (let i = 0; i < a000_set.length; i++) {
       a000_set[i].textContent = "Закрыть";
     }
@@ -134,8 +136,6 @@ function loadTexts() {
      const header = document.getElementsByTagName("header")[0];
      if (header) {
         header.style.direction = "rtl";
-        header.style.paddingRight = "20px";
-        header.style.paddingLeft = "0px";
      }
     if (a001) a001.innerHTML = "יצוא אירועים בקובץ";
     if (a002) {
@@ -156,7 +156,7 @@ function loadTexts() {
     }
     if (a006) a006.innerHTML = "עברית";
     if (a007) a007.innerHTML = "(נדרש)";
-    if (dateInput) dateInput.style.width = "calc(100% - 69px)";
+    if (dateInput) dateInput.style.width = "calc(100% - 71px)";
     if (a008) {
         a008.placeholder = "כותרת";
         a008.style.textAlign = "right";
@@ -198,7 +198,10 @@ function loadTexts() {
     }
     if (a019) a019.innerHTML = "בהיר";
     if (a020) a020.innerHTML = "כהה";
-
+    if (a021) {
+      a021.placeholder = "חיפוש...";
+      a021.style.direction = "rtl";
+    }
     for (let i = 0; i < a000_set.length; i++) {
       a000_set[i].textContent = "לסגור";
     }

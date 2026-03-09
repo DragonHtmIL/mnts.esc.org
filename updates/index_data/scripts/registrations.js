@@ -1,4 +1,5 @@
 let editingKey = null;
+let setIntervalId;
 const modal = document.getElementById("eventModal");
 const openModal = document.getElementById("openModal");
 const closeModal = document.getElementById("closeModal");

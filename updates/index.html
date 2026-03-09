@@ -7,30 +7,16 @@
   <title>Events Creator</title>
   <link rel="stylesheet" href="index_data/styles/roots.css">
   <link rel="stylesheet" href="index_data/styles/styles.css">
-  <style>
-    .important-container {
-      display: flex;
-      align-items: center;
-      margin: 10px 0;
-      color: var(--text-color);
-    }
-    .important-container input {
-      width: auto;
-      margin-right: 10px;
-    }
-    [dir="rtl"] .important-container input {
-      margin-right: 0;
-      margin-left: 10px;
-    }
-  </style>
 </head>
 <body>
-  <div class="header-spacer"></div>
-  <header>
+  <header class="header">
     <h1 class="title-page" id="title">...</h1>
+  </header>
+  <div id="navbar">
+    <input type="search" id="searchBar" placeholder="..." onchange="searchEvents();" oninput="searchEvents();">
     <button id="openSettings"><div class="text-effect"></div></button>
     <button id="infouse"><div class="text-effect"></div></button>
-  </header>
+  </div>
   <div id="settingsModal" class="modal">
     <div class="modal-content">
       <div class="settings-header-spacer"><h3 id="settingsHeaderTitle">...</h3></div>
@@ -119,6 +105,7 @@
   <script src="index_data/scripts/export_data.js"></script>
   <script src="index_data/scripts/import_data.js"></script>
   <script src="index_data/scripts/mask_clicked.js"></script>
+  <script src="index_data/scripts/search_events.js"></script>
   <!-- importants be bottom and last -->
   <script src="index_data/scripts/notifications.js"></script>
   <script src="index_data/scripts/window/dom_content_loaded.js"></script>

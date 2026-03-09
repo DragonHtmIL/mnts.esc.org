@@ -1,4 +1,4 @@
-setInterval(() => {
+function updateCountdowns() {
   document.querySelectorAll(".countdown").forEach(el => {
     const diff = new Date(el.dataset.date) - new Date();
     if (diff <= 0) {
@@ -27,4 +27,4 @@ setInterval(() => {
        el.style.direction = "rtl";
     }
   });
-}, 1000);
+}
