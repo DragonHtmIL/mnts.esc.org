@@ -24,7 +24,7 @@ This app use HTML, CSS and JS files for display your events.
 <div>Bright/Dark Themes.</div>
 <br>
 Credits:<br>
-<div>App Icon by <a href="https://www.flaticon.com/free-icons/countdown" title="countdown icons">Freepik - Flaticon</a></div>
+<div>App Icon by <a href="https://www.freepik.com/icon/add-event_7477497" title="countdown icons">Freepik</a></div>
 Codes: By AI GPT and Gemini.<br>
 Ideas: ArthurVesta(DragonHtmIL).<br>
 <hr>
@@ -51,7 +51,7 @@ Ideas: ArthurVesta(DragonHtmIL).<br>
 <div>Светлые/Темные темы.</div>
 <br>
 Кредиты:<br>
-<div>Иконка приложения от <a href="https://www.flaticon.com/free-icons/countdown" title="countdown icons">Freepik - Flaticon</a></div>
+<div>Иконка приложения от <a href="https://www.freepik.com/icon/add-event_7477497" title="countdown icons">Freepik - Flaticon</a></div>
 Коды: От AI GPT and Gemini.<br>
 Идеи: ArthurVesta(DragonHtmIL).<br>
 <hr>
@@ -79,7 +79,8 @@ Ideas: ArthurVesta(DragonHtmIL).<br>
 <div>נושאים בהירים/כהים.</div>
 <br>
 קרדיטים:<br>
-<div>אייקון האפליקציה מאת <a href="https://www.flaticon.com/free-icons/countdown" title="countdown icons">Freepik - Flaticon</a></div>
+<div>אייקון האפליקציה מאת <a href="https://www.freepik.com/icon/add-event_7477497" title="countdown icons">Freepik - Flaticon</a></div>
 קודים: על ידי AI GPT ו-Gemini.<br>
 רעיונות: ArthurVesta(DragonHtmIL).<br>
+
 </div>
