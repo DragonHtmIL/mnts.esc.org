@@ -1,5 +1,5 @@
 {
-  "version": "1.0.4",
+  "version": "1.0.5",
   "baseUrl": "https://raw.githubusercontent.com/DragonHtmIL/mnts.esc.org/refs/heads/main/updates/",
   "files": [
     "index.html",
@@ -22,6 +22,7 @@
     "index_data/scripts/registrations.js",
     "index_data/scripts/render_events.js",
     "index_data/scripts/save_event.js",
+    "index_data/scripts/search_events.js",
     "index_data/scripts/set_languages_buttons_active.js",
     "index_data/scripts/timer.js",
     "index_data/scripts/updater.js",
@@ -38,7 +39,3 @@
     "index_data/textures/dark/setting_filled.png"
   ]
 }
-
-
-
-
