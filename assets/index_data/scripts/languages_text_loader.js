@@ -21,6 +21,8 @@ function loadTexts() {
   var a019 = document.getElementById("lightTheme");
   var a020 = document.getElementById("darkTheme");
   var a021 = document.getElementById("searchBar");
+  var a022 = document.getElementById("eventLink");
+
   const dateInput = document.getElementById("eventDate");
   const a000_set = document.getElementsByClassName("close-text");
   const a001_set = document.getElementsByClassName("cancel-text");
@@ -28,11 +30,13 @@ function loadTexts() {
   const a003_set = document.getElementsByClassName("apply-text");
   const a004_set = document.getElementsByClassName("yes-text");
   const a005_set = document.getElementsByClassName("no-text");
+
   let lang = localStorage.getItem("lang");
   if (!lang) {
     lang = "en";
     localStorage.setItem("lang", "en");
   }
+
   if(lang === "en") {
     if (a000) a000.innerHTML = "Event Creator";
     if (a001) a001.innerHTML = "Export Events in File";
@@ -62,6 +66,8 @@ function loadTexts() {
     if (a019) a019.innerHTML = "Light";
     if (a020) a020.innerHTML = "Dark";
     if (a021) a021.placeholder = "Search...";
+    if (a022) a022.placeholder = "Link to site (optional)";
+
     for (let i = 0; i < a000_set.length; i++) {
       a000_set[i].textContent = "Close";
     }
@@ -111,6 +117,8 @@ function loadTexts() {
     if (a019) a019.innerHTML = "Светлая";
     if (a020) a020.innerHTML = "Темная";
     if (a021) a021.placeholder = "Поиск...";
+    if (a022) a022.placeholder = "Ссылка на сайт (необязательно)";
+
     for (let i = 0; i < a000_set.length; i++) {
       a000_set[i].textContent = "Закрыть";
     }
@@ -202,6 +210,11 @@ function loadTexts() {
       a021.placeholder = "חיפוש...";
       a021.style.direction = "rtl";
     }
+    if (a022) {
+      a022.placeholder = "קישור לאתר (אופציונלי)";
+      a022.style.textAlign = "right";
+    }
+
     for (let i = 0; i < a000_set.length; i++) {
       a000_set[i].textContent = "לסגור";
     }

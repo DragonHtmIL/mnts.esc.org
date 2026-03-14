@@ -4,6 +4,7 @@ function openEditModal(ev, key) {
   eventDesc.value = ev.desc || "";
   eventDate.value = ev.date;
   eventName.value = ev.name || "";
+  eventLink.value = ev.link || "";
   modal.style.display = "block";
   if(localStorage.getItem("lang") === "en") {
     saveEvent.textContent = "Save Changes";
@@ -24,6 +25,7 @@ closeModal.onclick = () => {
   eventDesc.value = "";
   eventDate.value = "";
   eventName.value = "";
+  eventLink.value = "";
   if(localStorage.getItem("lang") === "en") {
     saveEvent.textContent = "Save";
     modalTitle.textContent = "Create Event";

@@ -3,6 +3,7 @@ saveEvent.onclick = () => {
   const desc = eventDesc.value.trim();
   const date = eventDate.value;
   const name = eventName.value.trim();
+  const link = eventLink.value.trim();
   const important = document.getElementById("eventImportant").checked;
   if (!title || !date) {
     modalNotify.style.display = "block";
@@ -41,7 +42,7 @@ saveEvent.onclick = () => {
     }
     return;
   };
-  const data = { title, desc, date, name, important };
+  const data = { title, desc, date, name, link, important };
   if (editingKey) {
     localStorage.setItem(editingKey, JSON.stringify(data));
     editingKey = null;
@@ -65,6 +66,7 @@ saveEvent.onclick = () => {
   eventDesc.value = "";
   eventDate.value = "";
   eventName.value = "";
+  eventLink.value = "";
   document.getElementById("eventImportant").checked = false;
   renderEvents();
 };

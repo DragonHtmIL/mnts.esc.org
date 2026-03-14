@@ -22,6 +22,7 @@ This app use HTML, CSS and JS files for display your events.
 <div>Ignore DND and Silent setting in Edit/Create event for set the events IMPORTANT.</div>
 <div>Search between events.</div>
 <div>Bright/Dark Themes.</div>
+<div>Add link to source site (Latest).</div>
 <br>
 Credits:<br>
 <div>App Icon by <a href="https://www.freepik.com/icon/add-event_7477497" title="countdown icons">Freepik</a></div>
@@ -49,6 +50,7 @@ Ideas: ArthurVesta(DragonHtmIL).<br>
 <div>Игнорирование настроек DND и Silent при создании/редактировании событий для установки их важности.</div>
 <div>Поиск между событиями.</div>
 <div>Светлые/Темные темы.</div>
+<div>Добавление ссылки на сайт источника (последняя).</div>
 <br>
 Кредиты:<br>
 <div>Иконка приложения от <a href="https://www.freepik.com/icon/add-event_7477497" title="countdown icons">Freepik</a></div>
@@ -77,11 +79,10 @@ Ideas: ArthurVesta(DragonHtmIL).<br>
 <div>התעלמות מהגדרות DND ו-Silent ביצירת/עריכת אירועים כדי להגדיר את האירועים כחשובים.</div>
 <div>חיפוש בין האירועים.</div>
 <div>נושאים בהירים/כהים.</div>
+<div>הוספת קישור לאתר המקור (אחרון).</div>
 <br>
 קרדיטים:<br>
 <div>אייקון האפליקציה מאת <a href="https://www.freepik.com/icon/add-event_7477497" title="countdown icons">Freepik</a></div>
 קודים: על ידי AI GPT ו-Gemini.<br>
 רעיונות: ArthurVesta(DragonHtmIL).<br>
-
 </div>
-

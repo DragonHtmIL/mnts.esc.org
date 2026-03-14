@@ -140,11 +140,37 @@ span {
   margin-top: 10px;
   border-radius: 0 8px 8px 0;
   border: 2px solid var(--card-border);
-  border-left: none;
+  border-left-width: 0px;
+}
+.event-card:hover {
+  transform: scale(1.02);
+  margin-left: 2%;
+  border-left-width: 2px;
+  border-radius: 8px 8px 8px 8px;
 }
 .event-card.predelete {
   border: 2px solid var(--evt-remove-hover);
-  border-left: none;
+  border-left-width: 0px;
+}
+.event-id {
+  position: absolute;
+  top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--special-color);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px var(--card-border);
+  border-radius: 8px;
+}
+.event-id.right {
+  right: 10px;
+}
+.event-id.left {
+  left: 10px;
 }
 .countdown {
   color: var(--special-color);

@@ -1,35 +1,57 @@
 function createEventCard(ev, key) {
   const div = document.createElement("div");
   div.className = "event-card";
+
+  let sourceBtn = "";
+  if (ev.link) {
+    if(localStorage.getItem("lang") === "en") {
+      sourceBtn = `<button class="source-btn" onclick="window.open('${ev.link}', '_blank')">Open Source</button>`;
+    } else if(localStorage.getItem("lang") === "ru") {
+      sourceBtn = `<button class="source-btn" onclick="window.open('${ev.link}', '_blank')">Открыть источник</button>`;
+    } else if(localStorage.getItem("lang") === "he") {
+      sourceBtn = `<button class="source-btn" onclick="window.open('${ev.link}', '_blank')">פתח מקור</button>`;
+    }
+  }
+
+  const id = key.split('_')[1] || "";
+  const posClass = localStorage.getItem("lang") === "he" ? "left" : "right";
+  const idHtml = `<div class="event-id ${posClass}">${id}</div>`;
+
   if(localStorage.getItem("lang") === "en") {
   div.innerHTML = `
+    ${idHtml}
     <h3>${ev.title}</h3>
     <p>${ev.desc || ""}</p>
     <small>For: ${ev.name || "-"}</small>
     <div class="countdown" data-date="${ev.date}">Calculating...</div>
       <div class="btns-container">
+        ${sourceBtn}
         <button class="edit-btn">Edit</button>
         <button class="delete-btn">Delete</button>
       </div>
   `;
   } else if(localStorage.getItem("lang") === "ru") {
     div.innerHTML = `
+    ${idHtml}
     <h3>${ev.title}</h3>
     <p>${ev.desc || ""}</p>
     <small>Для: ${ev.name || "-"}</small>
     <div class="countdown" data-date="${ev.date}">Считаеца...</div>
       <div class="btns-container">
+        ${sourceBtn}
         <button class="edit-btn">Редактировать</button>
         <button class="delete-btn">Удалить</button>
       </div>
   `;
   } else if(localStorage.getItem("lang") === "he") {
     div.innerHTML = `
+    ${idHtml}
     <h3>${ev.title}</h3>
     <p>${ev.desc || ""}</p>
     <small>עבור: ${ev.name || "-"}</small>
     <div class="countdown" data-date="${ev.date}">מחשב...</div>
       <div class="btns-container">
+        ${sourceBtn}
         <button class="edit-btn">לערוך</button>
         <button class="delete-btn">למחוק</button>
       </div>
@@ -49,6 +71,9 @@ function createEventCard(ev, key) {
     const notificationTitle = document.getElementById("notificationTitle");
     const notificationMessage = document.getElementById("notificationMessage");
     const closeNotifyModal = document.getElementById("closeNotifyModal");
+
+    div.classList.add("predelete");
+
     closeNotifyModal.style.display = "none";
     confirmButtonsContainer.style.display = "block";
     modalNotify.style.display = "block";
@@ -77,6 +102,7 @@ function createEventCard(ev, key) {
       confirmButtons.classList.remove("red");
     }
     confirmNoButton.onclick = () => {
+      div.classList.remove("predelete");
       confirmButtonsContainer.style.display = "none";
       modalNotify.style.display = "none";
       closeNotifyModal.style.display = "block";
