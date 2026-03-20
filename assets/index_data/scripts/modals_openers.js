@@ -1,12 +1,12 @@
 openModal.addEventListener("click", () => {
-  modal.style.display = "block";
+  modal.style.display = "flex";
   document.body.style.overflow = "hidden";
 });
 openInfoModal.addEventListener("click", () => {
-  modalinfouse.style.display = "block";
+  modalinfouse.style.display = "flex";
   document.body.style.overflow = "hidden";
 });
 openSettingsModal.addEventListener("click", () => {
-  settingsModal.style.display = "block";
+  settingsModal.style.display = "flex";
   document.body.style.overflow = "hidden";
 });

@@ -8,7 +8,7 @@ document.getElementById("importButton").onclick = () => {
   const closeNotifyModal = document.getElementById("closeNotifyModal");
   closeNotifyModal.style.display = "none";
   confirmButtonsContainer.style.display = "block";
-  modalNotify.style.display = "block";
+  modalNotify.style.display = "flex";
   if(localStorage.getItem("lang") === "en") {
     notificationTitle.textContent = "Before Upload";
     notificationMessage.textContent = "Are you sure?\nAll current events will replaced from the file.";

@@ -14,7 +14,7 @@ document.getElementById("importFile").addEventListener("change", function () {
       });
       renderEvents();
       closeNotifyModal.style.display = "block";
-      modalNotify.style.display = "block";
+      modalNotify.style.display = "flex";
       if(localStorage.getItem("lang") === "en") {
         notificationTitle.textContent = "Import";
         notificationMessage.textContent = "Events imported successfully!";
@@ -33,7 +33,7 @@ document.getElementById("importFile").addEventListener("change", function () {
       }
     } catch (err) {
       closeNotifyModal.style.display = "block";
-      modalNotify.style.display = "block";
+      modalNotify.style.display = "flex";
       if(localStorage.getItem("lang") === "en") {
         notificationTitle.textContent = "Invalid";
         notificationMessage.textContent = "The file format is invalid .json.";

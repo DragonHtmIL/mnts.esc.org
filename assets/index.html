@@ -37,6 +37,7 @@
       <button id="importButton">...</button>
       <input type="file" id="importFile" accept=".json" style="display:none">
       <button id="exitAppBtn" onclick="exitApp();">...</button>
+      <button id="restartAppBtn" onclick="restartApp();">...</button>
       <hr>
       <button id="settingsApplyer" class="apply-text" style="display: none;" onclick="applySettings();">...</button>
       <button id="closeSettings" class="close-text">...</button>
@@ -52,9 +53,54 @@
       <h3 id="modalTitle">...</h3>
       <input id="eventTitle" placeholder="..." required>
       <textarea id="eventDesc" placeholder="..." style="resize: vertical;"></textarea>
-      <input id="eventDate" type="datetime-local" required><span id="requiredText">...</span>
+      <div id="dateContainer">
+        <input id="eventDate" type="datetime-local" required><span id="requiredText">...</span>
+      </div>
       <input id="eventName" placeholder="...">
       <input id="eventLink" placeholder="...">
+      <div class="important-container">
+        <label for="eventAutoDelete" id="autoDeleteLabel">...</label>
+        <input type="number" id="eventAutoDelete" min="0" value="0">
+      </div>
+      <div class="important-container">
+        <input type="checkbox" id="eventRepeat" onchange="toggleRepeatOptions();">
+        <label for="eventRepeat" id="repeatLabel">...</label>
+      </div>
+      <div id="repeatOptions" style="display: none;">
+        <div class="important-container">
+          <label for="repeatFrequency" id="repeatFrequencyLabel">...</label>
+          <select id="repeatFrequency" onchange="toggleRepeatOptions();">
+            <option value="day" id="optDay">...</option>
+            <option value="month" id="optMonth">...</option>
+            <option value="year" id="optYear">...</option>
+          </select>
+        </div>
+        <div class="important-container" id="repeatTimeContainer">
+          <label for="repeatTime" id="repeatTimeLabel">...</label>
+          <input type="time" id="repeatTime" value="00:00">
+        </div>
+        <div class="important-container" id="repeatDayContainer" style="display: none;">
+          <label for="repeatDay" id="repeatDayLabel">...</label>
+          <input type="number" id="repeatDay" min="1" max="31" value="1">
+        </div>
+        <div class="important-container" id="repeatMonthContainer" style="display: none;">
+          <label for="repeatMonth" id="repeatMonthLabel">...</label>
+          <select id="repeatMonth">
+            <option value="1" id="m1">...</option>
+            <option value="2" id="m2">...</option>
+            <option value="3" id="m3">...</option>
+            <option value="4" id="m4">...</option>
+            <option value="5" id="m5">...</option>
+            <option value="6" id="m6">...</option>
+            <option value="7" id="m7">...</option>
+            <option value="8" id="m8">...</option>
+            <option value="9" id="m9">...</option>
+            <option value="10" id="m10">...</option>
+            <option value="11" id="m11">...</option>
+            <option value="12" id="m12">...</option>
+          </select>
+        </div>
+      </div>
       <div class="important-container">
         <input type="checkbox" id="eventImportant">
         <label for="eventImportant" id="importantLabel">...</label>
@@ -88,6 +134,7 @@
     </div>
   </div>
   <div id="eventsContainer"></div>
+  <script src="index_data/scripts/restart.js"></script>
   <script src="index_data/scripts/exit.js"></script>
   <script src="index_data/scripts/registrations.js"></script>
   <script src="index_data/scripts/modal_edit.js"></script>
@@ -111,5 +158,39 @@
   <script src="index_data/scripts/window/dom_content_loaded.js"></script>
   <script src="index_data/scripts/window/error.js"></script>
   <script src="index_data/scripts/window/load.js"></script>
+  <script>
+    function toggleRepeatOptions() {
+      const isRepeat = document.getElementById("eventRepeat").checked;
+      const repeatOptions = document.getElementById("repeatOptions");
+      const dateContainer = document.getElementById("dateContainer");
+      const frequency = document.getElementById("repeatFrequency").value;
+
+      const timeContainer = document.getElementById("repeatTimeContainer");
+      const dayContainer = document.getElementById("repeatDayContainer");
+      const monthContainer = document.getElementById("repeatMonthContainer");
+
+      if (isRepeat) {
+        repeatOptions.style.display = "block";
+        dateContainer.style.display = "none";
+
+        // Show time for all repeat modes
+        timeContainer.style.display = "flex";
+
+        if (frequency === "day") {
+          dayContainer.style.display = "none";
+          monthContainer.style.display = "none";
+        } else if (frequency === "month") {
+          dayContainer.style.display = "flex";
+          monthContainer.style.display = "none";
+        } else if (frequency === "year") {
+          dayContainer.style.display = "flex";
+          monthContainer.style.display = "flex";
+        }
+      } else {
+        repeatOptions.style.display = "none";
+        dateContainer.style.display = "flex";
+      }
+    }
+  </script>
 </body>
 </html>

@@ -10,20 +10,28 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.GradientDrawable
+import android.graphics.drawable.StateListDrawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.PowerManager
 import android.provider.Settings
 import android.util.Log
+import android.view.Gravity
+import android.view.View
 import android.webkit.JavascriptInterface
 import android.webkit.ValueCallback
 import android.webkit.WebChromeClient
+import android.webkit.WebResourceRequest
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.FrameLayout
+import android.widget.ImageButton
 import androidx.activity.ComponentActivity
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
@@ -39,6 +47,8 @@ class MainActivity : ComponentActivity() {
     private var pendingFileContent: String? = null
     private lateinit var webView: WebView
     private lateinit var rootLayout: FrameLayout
+    private lateinit var homeButton: ImageButton
+    private var isDarkMode = true
 
     private val requestPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
@@ -72,6 +82,10 @@ class MainActivity : ComponentActivity() {
         rootLayout = FrameLayout(this)
         webView = WebView(this)
         rootLayout.addView(webView)
+        
+        setupNativeHomeButton()
+        rootLayout.addView(homeButton)
+
         setContentView(rootLayout)
 
         ViewCompat.setOnApplyWindowInsetsListener(rootLayout) { v, insets ->
@@ -93,7 +107,26 @@ class MainActivity : ComponentActivity() {
             cacheMode = WebSettings.LOAD_DEFAULT
         }
 
-        webView.webViewClient = WebViewClient()
+        webView.webViewClient = object : WebViewClient() {
+            override fun onPageFinished(view: WebView?, url: String?) {
+                super.onPageFinished(view, url)
+                runOnUiThread { updateHomeButtonVisibility(url) }
+            }
+            
+            override fun doUpdateVisitedHistory(view: WebView?, url: String?, isReload: Boolean) {
+                super.doUpdateVisitedHistory(view, url, isReload)
+                runOnUiThread { updateHomeButtonVisibility(url) }
+            }
+
+            override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
+                val url = request?.url.toString()
+                if (url.startsWith("file:///android_asset/")) {
+                    return false
+                }
+                view?.loadUrl(url)
+                return true
+            }
+        }
 
         webView.webChromeClient = object : WebChromeClient() {
             override fun onShowFileChooser(
@@ -119,7 +152,117 @@ class MainActivity : ComponentActivity() {
             }
         }
 
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (webView.canGoBack()) {
+                    webView.goBack()
+                } else {
+                    val url = webView.url
+                    if (url != null && !url.startsWith("file:///android_asset/index.html")) {
+                        webView.loadUrl("file:///android_asset/index.html")
+                    } else {
+                        finish()
+                    }
+                }
+            }
+        })
+
         webView.loadUrl("file:///android_asset/index.html")
+    }
+
+    private fun setupNativeHomeButton() {
+        val density = resources.displayMetrics.density
+        homeButton = ImageButton(this).apply {
+            val size = (50 * density).toInt()
+            layoutParams = FrameLayout.LayoutParams(size, size).apply {
+                gravity = Gravity.BOTTOM or Gravity.END
+                bottomMargin = (10 * density).toInt()
+                rightMargin = (10 * density).toInt()
+            }
+            
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                elevation = 25 * density
+            }
+            
+            scaleType = android.widget.ImageView.ScaleType.FIT_CENTER
+            val padding = (12 * density).toInt()
+            setPadding(padding, padding, padding, padding)
+            
+            visibility = View.GONE
+            
+            setOnClickListener {
+                webView.loadUrl("file:///android_asset/index.html")
+            }
+        }
+        applyHomeButtonStyling()
+        updateHomeButtonIcon()
+    }
+
+    private fun applyHomeButtonStyling() {
+        val density = resources.displayMetrics.density
+        
+        // Android Colors are #AARRGGBB
+        val normalBg = Color.parseColor("#80007BFF") // 50% opacity blue
+        val pressedBg = Color.parseColor("#FF0056B3") // Solid darker blue
+        val strokeColor = Color.parseColor("#FF007AFF") // Solid border blue
+        
+        val normalShape = GradientDrawable().apply {
+            shape = GradientDrawable.RECTANGLE
+            cornerRadius = 5 * density
+            setColor(normalBg)
+            setStroke((2 * density).toInt(), strokeColor)
+        }
+        
+        val pressedShape = GradientDrawable().apply {
+            shape = GradientDrawable.RECTANGLE
+            cornerRadius = 5 * density
+            setColor(pressedBg)
+            setStroke((2 * density).toInt(), strokeColor)
+        }
+        
+        val states = StateListDrawable().apply {
+            addState(intArrayOf(android.R.attr.state_pressed), pressedShape)
+            addState(intArrayOf(), normalShape)
+        }
+        
+        homeButton.background = states
+        
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            homeButton.clipToOutline = true
+        }
+    }
+
+    private fun updateHomeButtonIcon() {
+        val themeDir = if (isDarkMode) "dark" else "light"
+        val defaultPath = "index_data/textures/$themeDir/home.png"
+        val hoverPath = "index_data/textures/$themeDir/home_filled.png"
+        
+        try {
+            val stateList = StateListDrawable()
+            
+            val pressedStream = assets.open(hoverPath)
+            val pressedDrawable = Drawable.createFromStream(pressedStream, null)
+            stateList.addState(intArrayOf(android.R.attr.state_pressed), pressedDrawable)
+            
+            val defaultStream = assets.open(defaultPath)
+            val defaultDrawable = Drawable.createFromStream(defaultStream, null)
+            stateList.addState(intArrayOf(), defaultDrawable)
+            
+            homeButton.setImageDrawable(stateList)
+        } catch (e: Exception) {
+            Log.e("MainActivity", "Error loading home icons", e)
+        }
+    }
+
+    private fun updateHomeButtonVisibility(url: String?) {
+        runOnUiThread {
+            if (url == null || url.startsWith("file:///android_asset/index.html")) {
+                homeButton.visibility = View.GONE
+            } else {
+                homeButton.visibility = View.VISIBLE
+                homeButton.bringToFront()
+            }
+        }
     }
 
     private fun requestBatteryOptimizationExemption() {
@@ -149,7 +292,6 @@ class MainActivity : ComponentActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             
-            // Standard Channel
             val channel = NotificationChannel("EVENT_CHANNEL", "Event Notifications", NotificationManager.IMPORTANCE_HIGH).apply {
                 description = "Notifications for started events"
                 enableVibration(true)
@@ -157,7 +299,6 @@ class MainActivity : ComponentActivity() {
             }
             notificationManager.createNotificationChannel(channel)
 
-            // Important Channel (Bypass DND)
             val importantChannel = NotificationChannel("IMPORTANT_EVENT_CHANNEL", "Important Event Alerts", NotificationManager.IMPORTANCE_HIGH).apply {
                 description = "Critical alerts that bypass silence and DND"
                 enableVibration(true)
@@ -171,7 +312,6 @@ class MainActivity : ComponentActivity() {
     inner class WebAppInterface(private val context: Context) {
         @JavascriptInterface
         fun scheduleNotification(title: String, message: String, timestamp: Long, isImportant: Boolean) {
-            Log.d("WebAppInterface", "Scheduling notification: $title at $timestamp, Important: $isImportant")
             val intent = Intent(context, NotificationReceiver::class.java).apply {
                 putExtra("title", title)
                 putExtra("message", message)
@@ -187,7 +327,6 @@ class MainActivity : ComponentActivity() {
             val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
             
             try {
-                // Use AlarmClock for absolute precision and zero delay
                 val info = AlarmManager.AlarmClockInfo(timestamp, pendingIntent)
                 alarmManager.setAlarmClock(info, pendingIntent)
             } catch (e: Exception) {
@@ -209,8 +348,20 @@ class MainActivity : ComponentActivity() {
         }
 
         @JavascriptInterface
+        fun restartApp() {
+            val intent = context.packageManager.getLaunchIntentForPackage(context.packageName)
+            val mainIntent = Intent.makeRestartActivityTask(intent?.component)
+            context.startActivity(mainIntent)
+            Runtime.getRuntime().exit(0)
+        }
+
+        @JavascriptInterface
         fun setSystemBarsColor(isDark: Boolean) {
             runOnUiThread {
+                isDarkMode = isDark
+                updateHomeButtonIcon()
+                applyHomeButtonStyling()
+
                 val backgroundColor = if (isDark) Color.parseColor("#0B0B0B") else Color.parseColor("#F0F0F0")
                 rootLayout.setBackgroundColor(backgroundColor)
                 

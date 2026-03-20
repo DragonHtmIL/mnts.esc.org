@@ -22,8 +22,17 @@ function loadTexts() {
   var a020 = document.getElementById("darkTheme");
   var a021 = document.getElementById("searchBar");
   var a022 = document.getElementById("eventLink");
+  var a023 = document.getElementById("restartAppBtn");
+  var a024 = document.getElementById("autoDeleteLabel");
+  var a025 = document.getElementById("repeatLabel");
+  var a026 = document.getElementById("repeatFrequencyLabel");
+  var a027 = document.getElementById("optDay");
+  var a028 = document.getElementById("optMonth");
+  var a029 = document.getElementById("optYear");
+  var a030 = document.getElementById("repeatTimeLabel");
+  var a031 = document.getElementById("repeatDayLabel");
+  var a032 = document.getElementById("repeatMonthLabel");
 
-  const dateInput = document.getElementById("eventDate");
   const a000_set = document.getElementsByClassName("close-text");
   const a001_set = document.getElementsByClassName("cancel-text");
   const a002_set = document.getElementsByClassName("save-text");
@@ -37,6 +46,17 @@ function loadTexts() {
     localStorage.setItem("lang", "en");
   }
 
+  const months_en = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const months_ru = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+  const months_he = ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"];
+
+  function setMonths(list) {
+    for (let i = 1; i <= 12; i++) {
+      const el = document.getElementById("m" + i);
+      if (el) el.innerHTML = list[i - 1];
+    }
+  }
+
   if(lang === "en") {
     if (a000) a000.innerHTML = "Event Creator";
     if (a001) a001.innerHTML = "Export Events in File";
@@ -46,13 +66,12 @@ function loadTexts() {
     if (a005) a005.innerHTML = "Russian<br>(Русский)";
     if (a006) a006.innerHTML = "Hebrew<br>(עברית)";
     if (a007) a007.innerHTML = "(required)";
-    if (dateInput) dateInput.style.width = "calc(100% - 97px)";
     if (a008) a008.placeholder = "Title";
     if (a009) a009.placeholder = "Description (optional)";
     if (a010) a010.placeholder = "Anime/Game/Manga/Manhua/Company Name (optional)";
     if (a011) {
         a011.innerHTML = "About this app:<br>";
-        a011.innerHTML += "This app allows you to create and manage countdown events for your favorite games or anime releases. You can add events with titles, descriptions, dates, and associated game or anime names. The events will be displayed with a live countdown timer.<br>";
+        a011.innerHTML += "This app allows you to create and manage countdown events for your favorite games or anime releases or importants like go to doctor. You can add events with titles, descriptions, dates, and associated game or anime names. The events will be displayed with a live countdown timer.<br>";
         a011.innerHTML += "This project is gen by AI and is open source. You can find the source code on <a href=\"https://github.com/DragonHTMIL/mnts.esc.org/\">GitHub</a>";
         a011.innerHTML += "<hr><p><strong>Note:</strong> Events are stored in your browser's local storage, so they will persist until you clear it or delete them manually.<br> and removed events cannot be recovered.</p>";
     }
@@ -61,12 +80,23 @@ function loadTexts() {
     if (a014) a014.innerHTML = "Create your event to get started";
     if (a015) a015.innerHTML = "Create Event";
     if (a016) a016.innerHTML = "Important Alert (Bypass Silence/DND)";
-    if (a017) a017.innerHTML = "Exit App";
+    if (a017) a017.innerHTML = "Exit";
     if (a018) a018.innerHTML = "Theme";
     if (a019) a019.innerHTML = "Light";
     if (a020) a020.innerHTML = "Dark";
     if (a021) a021.placeholder = "Search...";
     if (a022) a022.placeholder = "Link to site (optional)";
+    if (a023) a023.innerHTML = "Restart";
+    if (a024) a024.innerHTML = "Auto Delete This Event (hours):";
+    if (a025) a025.innerHTML = "Repeat Event";
+    if (a026) a026.innerHTML = "Every:";
+    if (a027) a027.innerHTML = "Day";
+    if (a028) a028.innerHTML = "Month";
+    if (a029) a029.innerHTML = "Year";
+    if (a030) a030.innerHTML = "At Time:";
+    if (a031) a031.innerHTML = "On Day:";
+    if (a032) a032.innerHTML = "In Month:";
+    setMonths(months_en);
 
     for (let i = 0; i < a000_set.length; i++) {
       a000_set[i].textContent = "Close";
@@ -97,13 +127,12 @@ function loadTexts() {
     if (a005) a005.innerHTML = "Русский";
     if (a006) a006.innerHTML = "Иврит<br>(עברית)";
     if (a007) a007.innerHTML = "(обязательно)";
-    if (dateInput) dateInput.style.width = "calc(100% - 131px)";
     if (a008) a008.placeholder = "Название";
     if (a009) a009.placeholder = "Описание (необязательно)";
     if (a010) a010.placeholder = "Название аниме/игры/Манга/Манхуа/Компания (необязательно)";
     if (a011) {
         a011.innerHTML = "О приложении:<br>";
-        a011.innerHTML += "Этот приложение позволяет создавать и управлять событиями обратного отсчета для ваших любимых игр или релизов аниме. Вы можете добавлять события с названиями, описаниями, датами и связанными названиями игр или аниме. События будут отображаться с живым таймером обратного отсчета.<br>";
+        a011.innerHTML += "Этот приложение позволяет создавать и управлять событиями обратного отсчета для ваших любимых игр или релизов аниме или важными событиями, такими как поход к врачу. Вы можете добавлять события с названиями, описаниями, датами и связанными названиями игр или аниме. События будут отображаться с живым таймером обратного отсчета.<br>";
         a011.innerHTML += "Этот проект сгенерирован ИИ и является открытым исходным кодом. Вы можете найти исходный код на <a href=\"https://github.com/DragonHTMIL/mnts.esc.org/\">GitHub</a>";
         a011.innerHTML += "<hr><p><strong>Примечание:</strong> События хранятся в локальном хранилище вашего браузера, поэтому они будут сохраняться, пока вы не очистите его или не удалите их вручную.<br> и удаленные события не могут быть восстановлены.</p>";
     }
@@ -112,12 +141,23 @@ function loadTexts() {
     if (a014) a014.innerHTML = "Создайте свое событие, чтобы начать";
     if (a015) a015.innerHTML = "Создать событие";
     if (a016) a016.innerHTML = "Важное оповещение (обход беззвучного режима/DND)";
-    if (a017) a017.innerHTML = "Выйти из приложения";
+    if (a017) a017.innerHTML = "Выйти";
     if (a018) a018.innerHTML = "Тема";
     if (a019) a019.innerHTML = "Светлая";
     if (a020) a020.innerHTML = "Темная";
     if (a021) a021.placeholder = "Поиск...";
     if (a022) a022.placeholder = "Ссылка на сайт (необязательно)";
+    if (a023) a023.innerHTML = "Перезапустить";
+    if (a024) a024.innerHTML = "Автоудаление события (часы):";
+    if (a025) a025.innerHTML = "Повторять событие";
+    if (a026) a026.innerHTML = "Каждый:";
+    if (a027) a027.innerHTML = "День";
+    if (a028) a028.innerHTML = "Месяц";
+    if (a029) a029.innerHTML = "Год";
+    if (a030) a030.innerHTML = "В время:";
+    if (a031) a031.innerHTML = "В день:";
+    if (a032) a032.innerHTML = "В месяц:";
+    setMonths(months_ru);
 
     for (let i = 0; i < a000_set.length; i++) {
       a000_set[i].textContent = "Закрыть";
@@ -164,7 +204,6 @@ function loadTexts() {
     }
     if (a006) a006.innerHTML = "עברית";
     if (a007) a007.innerHTML = "(נדרש)";
-    if (dateInput) dateInput.style.width = "calc(100% - 71px)";
     if (a008) {
         a008.placeholder = "כותרת";
         a008.style.textAlign = "right";
@@ -179,7 +218,7 @@ function loadTexts() {
     }
     if (a011) {
         a011.innerHTML = "על האפליקציה הזו:<br>";
-        a011.innerHTML += "אפליקציה זו מאפשרת לכם ליצור ולנהל אירועי ספירה לאחור למשחקים האהובים עליכם או להוצאות אנימה. אתם יכולים להוסיף אירועים עם כותרות, תיאורים, תאריכים ושמות משחקים או אנימה קשורים. האירועים יוצגו עם טיימר ספירה לאחור חי.<br>";
+        a011.innerHTML += "אפליקציה זו מאפשרת לכם ליצור ולנהל אירועי ספירה לאחור למשחקים האהובים עליכם או להוצאות אנימה או אירועים חשובים כמו לגשת לרופא. אתם יכולים להוסיף אירועים עם כותרות, תיאורים, תאריכים ושמות משחקים או אנימה קשורים. האירועים יוצגו עם טיימר ספירה לאחור חי.<br>";
         a011.innerHTML += "פרויקט זה נוצר על ידי AI והוא קוד פתוח. אתם יכולים למצוא את קוד המקור ב- <a href=\"https://github.com/DragonHTMIL/mnts.esc.org/\">GitHub</a>";
         a011.innerHTML += "<hr><p><strong>הערה:</strong> אירועים מאוחסנים באחסון המקומי של הדפדפן שלכם, כך שהם יישארו עד שתנקו אותו או תמחקו אותם ידנית.<br> ואירועים שנמחקו לא ניתן לשחזר.</p>";
         a011.style.textAlign = "right";
@@ -214,6 +253,33 @@ function loadTexts() {
       a022.placeholder = "קישור לאתר (אופציונלי)";
       a022.style.textAlign = "right";
     }
+    if (a023) {
+      a023.innerHTML = "הפעל מחדש";
+      a023.style.textAlign = "right";
+      a023.style.direction = "rtl";
+    }
+    if (a024) {
+      a024.innerHTML = "מחיקה אוטומטית של האירוע (שעות):";
+      a024.style.textAlign = "right";
+      a024.style.direction = "rtl";
+    }
+    if (a025) {
+      a025.innerHTML = "חזור על אירוע";
+      a025.style.textAlign = "right";
+      a025.style.direction = "rtl";
+    }
+    if (a026) {
+      a026.innerHTML = "כל:";
+      a026.style.textAlign = "right";
+      a026.style.direction = "rtl";
+    }
+    if (a027) a027.innerHTML = "יום";
+    if (a028) a028.innerHTML = "חודש";
+    if (a029) a029.innerHTML = "שנה";
+    if (a030) a030.innerHTML = "בשעה:";
+    if (a031) a031.innerHTML = "ביום:";
+    if (a032) a032.innerHTML = "בחודש:";
+    setMonths(months_he);
 
     for (let i = 0; i < a000_set.length; i++) {
       a000_set[i].textContent = "לסגור";

@@ -1,6 +1,7 @@
 function createEventCard(ev, key) {
   const div = document.createElement("div");
   div.className = "event-card";
+  div.dataset.key = key;
 
   let sourceBtn = "";
   if (ev.link) {
@@ -76,7 +77,7 @@ function createEventCard(ev, key) {
 
     closeNotifyModal.style.display = "none";
     confirmButtonsContainer.style.display = "block";
-    modalNotify.style.display = "block";
+    modalNotify.style.display = "flex";
     document.body.style.overflow = "hidden";
     if(localStorage.getItem("lang") === "en") {
       notificationTitle.textContent = "Event Deletion";

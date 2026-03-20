@@ -13,7 +13,7 @@ This app use HTML, CSS and JS files for display your events.
 <div>Russian</div>
 <br>
 <h3>About this app:</h3>
-<div>This app allows you to create and manage countdown events for your favorite games or anime releases. You can add events with titles, descriptions, dates, and associated game or anime names. The events will be displayed with a live countdown timer.<br></div>
+<div>This app allows you to create and manage countdown events for your favorite games or anime releases or importants like go to Doctor. You can add events with titles, descriptions, dates, and associated game or anime names. The events will be displayed with a live countdown timer.<br></div>
 <div>This project is gen by AI and is open source.</div>
 <br>
 <h3>Features:</h3>
@@ -22,7 +22,8 @@ This app use HTML, CSS and JS files for display your events.
 <div>Ignore DND and Silent setting in Edit/Create event for set the events IMPORTANT.</div>
 <div>Search between events.</div>
 <div>Bright/Dark Themes.</div>
-<div>Add link to source site (Latest).</div>
+<div>Add link to source site.</div>
+<div>Do repeated events by day, month or year (Latest).</div>
 <br>
 Credits:<br>
 <div>App Icon by <a href="https://www.freepik.com/icon/add-event_7477497" title="countdown icons">Freepik</a></div>
@@ -41,7 +42,7 @@ Ideas: ArthurVesta(DragonHtmIL).<br>
 <div>Русский</div>
 <br>
 <h3>О данном приложении:</h3>
-<div>Это приложение позволяет создавать и управлять обратным отсчетом событий для ваших любимых игр или релизов аниме. Вы можете добавлять события с названиями, описаниями, датами и связанными названиями игр или аниме. События будут отображаться с живым таймером обратного отсчета.<br></div>
+<div>Это приложение позволяет создавать и управлять обратным отсчетом событий для ваших любимых игр или релизов аниме или важными событиями, такими как поход к врачу. Вы можете добавлять события с названиями, описаниями, датами и связанными названиями игр или аниме. События будут отображаться с живым таймером обратного отсчета.<br></div>
 <div>Этот проект создан с помощью AI и является открытым исходным кодом.</div>
 <br>
 <h3>Особенности:</h3>
@@ -50,7 +51,8 @@ Ideas: ArthurVesta(DragonHtmIL).<br>
 <div>Игнорирование настроек DND и Silent при создании/редактировании событий для установки их важности.</div>
 <div>Поиск между событиями.</div>
 <div>Светлые/Темные темы.</div>
-<div>Добавление ссылки на сайт источника (последняя).</div>
+<div>Добавление ссылки на сайт источника.</div>
+<div>Создание повторяющихся событий по дням, месяцам или годам (последняя).</div>
 <br>
 Кредиты:<br>
 <div>Иконка приложения от <a href="https://www.freepik.com/icon/add-event_7477497" title="countdown icons">Freepik</a></div>
@@ -70,7 +72,7 @@ Ideas: ArthurVesta(DragonHtmIL).<br>
 <div>רוסית</div>
 <br>
 <h3>על האפליקציה הזו:</h3>
-<div>האפליקציה הזו מאפשרת לך ליצור ולנהל אירועי ספירה לאחור עבור המשחקים האהובים עליך או שחרורי אנימה. אתה יכול להוסיף אירועים עם כותרות, תיאורים, תאריכים ושמות משחקים או אנימה קשורים. האירועים יוצגו עם טיימר ספירה לאחור חי.<br></div>
+<div>האפליקציה הזו מאפשרת לך ליצור ולנהל אירועי ספירה לאחור עבור המשחקים האהובים עליך או שחרורי אנימה או אירועים חשובים כמו לגשת לרופא. אתה יכול להוסיף אירועים עם כותרות, תיאורים, תאריכים ושמות משחקים או אנימה קשורים. האירועים יוצגו עם טיימר ספירה לאחור חי.<br></div>
 <div>הפרויקט הזה נוצר על ידי AI והוא קוד פתוח.</div>
 <br>
 <h3>תכונות:</h3>
@@ -79,7 +81,8 @@ Ideas: ArthurVesta(DragonHtmIL).<br>
 <div>התעלמות מהגדרות DND ו-Silent ביצירת/עריכת אירועים כדי להגדיר את האירועים כחשובים.</div>
 <div>חיפוש בין האירועים.</div>
 <div>נושאים בהירים/כהים.</div>
-<div>הוספת קישור לאתר המקור (אחרון).</div>
+<div>הוספת קישור לאתר המקור.</div>
+<div>יצירת אירועים חוזרים לפי יום, חודש או שנה (אחרון).</div>
 <br>
 קרדיטים:<br>
 <div>אייקון האפליקציה מאת <a href="https://www.freepik.com/icon/add-event_7477497" title="countdown icons">Freepik</a></div>
