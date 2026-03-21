@@ -1,12 +1,9 @@
 {
-  "version": "1.0.4",
-  "descriptionEn": "Added support for repeating events and UI fixes.",
-  "descriptionRu": "Добавлена поддержка повторяющихся событий и исправления интерфейса.",
-  "descriptionHe": "נוספה תמיכה באירועים חוזרים ותיקוני ממשק משתמש.",
-  "baseUrl": "https://raw.githubusercontent.com/DragonHTMIL/mnts.esc.org/main/updates/",
-  "files": [
-    "index_data/scripts/languages_text_loader.js",
-    "index_data/scripts/updater.js"
-  ],
+  "version": "1.0.2",
+  "descriptionEn": "Added detailed repeating event settings and fixed UI translations.",
+  "descriptionRu": "Добавлены детальные настройки повторения событий и исправлены переводы интерфейса.",
+  "descriptionHe": "נוספו הגדרות חזרה מפורטות ותוקנו תרגומי ממשק המשתמש.",
+  "baseUrl": "https://raw.githubusercontent.com/DragonHTMIL/mnts.esc.org/main/update/",
+  "files": [],
   "deleteFiles": []
 }
