@@ -1,9 +1,12 @@
 {
-  "version": "1.0.2",
+  "version": "1.0.3",
   "baseUrl": "https://raw.githubusercontent.com/DragonHTMIL/mnts.esc.org/main/updates/",
   "files": [
     "index_data/scripts/languages_text_loader.js",
     "index_data/scripts/updater.js"
   ],
-  "deleteFiles": []
+  "deleteFiles": [],
+  "descriptionEn": "Some fixes",
+  "descriptionRu": "Некаторие Исправленние",
+  "descriptionHe": "במה תיכונים"
 }
