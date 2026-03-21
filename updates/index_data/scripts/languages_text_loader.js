@@ -58,6 +58,8 @@ function loadTexts() {
     }
   }
 
+  const dateInput = document.getElementById("eventDate");
+
   if(lang === "en") {
     if (a000) a000.innerHTML = "Event Creator";
     if (a001) a001.innerHTML = "Export Events in File";
@@ -67,6 +69,7 @@ function loadTexts() {
     if (a005) a005.innerHTML = "Russian<br>(Русский)";
     if (a006) a006.innerHTML = "Hebrew<br>(עברית)";
     if (a007) a007.innerHTML = "(required)";
+    if (dateInput) dateInput.style.width = "calc(100% - 97px)";
     if (a008) a008.placeholder = "Title";
     if (a009) a009.placeholder = "Description (optional)";
     if (a010) a010.placeholder = "Anime/Game/Manga/Manhua/Company Name (optional)";
@@ -129,6 +132,7 @@ function loadTexts() {
     if (a005) a005.innerHTML = "Русский";
     if (a006) a006.innerHTML = "Иврит<br>(עברית)";
     if (a007) a007.innerHTML = "(обязательно)";
+    if (dateInput) dateInput.style.width = "calc(100% - 131px)";
     if (a008) a008.placeholder = "Название";
     if (a009) a009.placeholder = "Описание (необязательно)";
     if (a010) a010.placeholder = "Название аниме/игры/Манга/Манхуа/Компания (необязательно)";
@@ -207,6 +211,7 @@ function loadTexts() {
     }
     if (a006) a006.innerHTML = "עברית";
     if (a007) a007.innerHTML = "(נדרש)";
+    if (dateInput) dateInput.style.width = "calc(100% - 71px)";
     if (a008) {
         a008.placeholder = "כותרת";
         a008.style.textAlign = "right";
@@ -282,7 +287,7 @@ function loadTexts() {
     if (a030) a030.innerHTML = "בשעה:";
     if (a031) a031.innerHTML = "ביום:";
     if (a032) a032.innerHTML = "בחודש:";
-    if (a033) a033.innerHTML = "בדוקת עדכונים";
+    if (a033) a033.innerHTML = "בדוק עדכונים";
     setMonths(months_he);
 
     for (let i = 0; i < a000_set.length; i++) {
