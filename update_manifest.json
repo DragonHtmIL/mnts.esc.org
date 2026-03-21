@@ -1,6 +1,12 @@
 {
-  "version": "1.0.1",
-  "baseUrl": "https://raw.githubusercontent.com/DragonHTMIL/mnts.esc.org/main/app/src/main/assets/",
-  "files": [],
-  "deleteFiles": []
+  "version": "1.0.2",
+  "baseUrl": "https://raw.githubusercontent.com/DragonHTMIL/mnts.esc.org/main/updates/",
+  "files": [
+    "index_data/scripts/languages_text_loader.js",
+    "index_data/scripts/updater.js"
+  ],
+  "deleteFiles": [],
+  "descriptionEn": "Some fixes"
+  "descriptionRu": "Некаторие Исправленние"
+  "descriptionHe": "במה תיכונים"
 }
