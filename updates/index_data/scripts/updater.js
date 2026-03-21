@@ -14,7 +14,20 @@ async function checkForUpdatesManual() {
         const localVersion = localStorage.getItem(CURRENT_VERSION_KEY) || "1.0.0";
 
         if (manifest.version !== localVersion) {
-            if (confirm(`New update available (v${manifest.version}). Do you want to update now?`)) {
+            const lang = localStorage.getItem("lang") || "en";
+            let description = "";
+
+            if (lang === "en") description = manifest.descriptionEn || "";
+            else if (lang === "ru") description = manifest.descriptionRu || "";
+            else if (lang === "he") description = manifest.descriptionHe || "";
+
+            let confirmMsg = `New update available (v${manifest.version}).`;
+            if (description) {
+                confirmMsg += `\n\nWhat's new:\n${description}`;
+            }
+            confirmMsg += `\n\nDo you want to update now?`;
+
+            if (confirm(confirmMsg)) {
                 console.log("Updating to version " + manifest.version);
 
                 // 1. Download/Update new files
