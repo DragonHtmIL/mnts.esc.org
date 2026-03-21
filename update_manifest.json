@@ -5,7 +5,7 @@
   "descriptionHe": "נוספה תמיכה באירועים חוזרים ותיקוני ממשק משתמש.",
   "baseUrl": "https://raw.githubusercontent.com/DragonHTMIL/mnts.esc.org/main/updates/",
   "files": [
-    "index.html",
+    "index_data/scripts/languages_text_loader.js",
     "index_data/scripts/updater.js"
   ],
   "deleteFiles": []
