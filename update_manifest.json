@@ -3,7 +3,7 @@
   "descriptionEn": "Added detailed repeating event settings and fixed UI translations.",
   "descriptionRu": "Добавлены детальные настройки повторения событий и исправлены переводы интерфейса.",
   "descriptionHe": "נוספו הגדרות חזרה מפורטות ותוקנו תרגומי ממשק המשתמש.",
-  "baseUrl": "https://raw.githubusercontent.com/DragonHTMIL/mnts.esc.org/main/update/",
+  "baseUrl": "https://raw.githubusercontent.com/DragonHTMIL/mnts.esc.org/main/updates/",
   "files": [],
   "deleteFiles": []
 }
