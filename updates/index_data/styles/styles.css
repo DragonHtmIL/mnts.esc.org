@@ -6,20 +6,95 @@
   -moz-transition: .6s;
   -webkit-transition: .6s;
   -webkit-tap-highlight-color: transparent;
-}
-body {
-  background-color: var(--background);
-  color: var(--text-color);
   font-family: Arial, sans-serif;
-  user-select: none;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
+}
+*::-webkit-scrollbar,
+*:hover::-webkit-scrollbar,
+*:focus::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px;
+  background-color: var(--scroll-main-bg);
+}
+*::-webkit-scrollbar-thumb,
+*:hover::-webkit-scrollbar-thumb,
+*:focus::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb-bg);
+  border-radius: 5px;
+  border: solid 2px transparent;
+}
+*::-webkit-scrollbar-thumb:hover,
+*:hover::-webkit-scrollbar-thumb:hover,
+*:focus::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-thumb-bg-hover);
+}
+*::-webkit-scrollbar-button:vertical:decrement,
+*:hover::-webkit-scrollbar-button:vertical:decrement,
+*:focus::-webkit-scrollbar-button:vertical:decrement {
+  border-radius: 5px;
+  background-color: var(--scroll-thumb-bg);
+}
+*::-webkit-scrollbar-button:vertical:increment,
+*:hover::-webkit-scrollbar-button:vertical:increment,
+*:focus::-webkit-scrollbar-button:vertical:increment {
+  border-radius: 5px;
+  background-color: var(--scroll-thumb-bg);
+}
+*::-webkit-scrollbar-button:horizontal:decrement,
+*:hover::-webkit-scrollbar-button:horizontal:decrement,
+*:focus::-webkit-scrollbar-button:horizontal:decrement {
+  border-radius: 5px;
+  background-color: var(--scroll-thumb-bg);
+}
+*::-webkit-scrollbar-button:horizontal:increment,
+*:hover::-webkit-scrollbar-button:horizontal:increment,
+*:focus::-webkit-scrollbar-button:horizontal:increment {
+  border-radius: 5px;
+  background-color: var(--scroll-thumb-bg);
 }
 html,
 body {
   padding: 0;
   margin: 0;
+  overflow: hidden;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+#subBudy {
+  background-color: var(--background);
+  color: var(--text-color);
+  overflow: auto;
+  height: 100vh;
+  width: 100vw;
+}
+#subBudy.mobile::-webkit-scrollbar {
+  width: 20px;
+}
+#subBudy.mobile #openModal {
+  right: 30px !important;
+}
+#subBudy::-webkit-scrollbar-button:vertical:decrement,
+#subBudy:hover::-webkit-scrollbar-button:vertical:decrement,
+#subBudy:focus::-webkit-scrollbar-button:vertical:decrement {
+  border-radius: 0 0 5px 5px !important;
+  background-color: var(--scroll-thumb-bg);
+}
+#subBudy::-webkit-scrollbar-button:vertical:increment,
+#subBudy:hover::-webkit-scrollbar-button:vertical:increment,
+#subBudy:focus::-webkit-scrollbar-button:vertical:increment {
+  border-radius: 5px 5px 0 0 !important;
+  background-color: var(--scroll-thumb-bg);
+}
+#subBudy.mobile::-webkit-scrollbar-button:vertical:decrement,
+#subBudy.mobile:hover::-webkit-scrollbar-button:vertical:decrement,
+#subBudy.mobile:focus::-webkit-scrollbar-button:vertical:decrement {
+  height: 50px !important;
+}
+#subBudy.mobile::-webkit-scrollbar-button:vertical:increment,
+#subBudy.mobile:hover::-webkit-scrollbar-button:vertical:increment,
+#subBudy.mobile:focus::-webkit-scrollbar-button:vertical:increment {
+  height: 50px !important;
 }
 header {
   width: 100%;
@@ -119,7 +194,7 @@ span {
 #openModal {
   position: fixed;
   bottom: 10px;
-  right: 10px;
+  right: 20px;
   width: 50px;
   height: 50px;
   font-size: 30px;
@@ -291,6 +366,7 @@ select {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+  overflow: auto;
 }
 input[type="checkbox"] {
   cursor: pointer;
@@ -340,3 +416,65 @@ input[type="checkbox"]:checked:disabled {
   cursor: not-allowed;
   background: var(--cb-disabled);
 }
+#repeatOptions {
+  overflow: auto;
+}
+#autoDeleteContainer {
+  display: flex;
+  flex-direction: column;
+}
+.in-modal-content {
+  overflow: auto;
+  height: 80vh;
+  margin-right: -10px;
+  padding-right: 10px;
+}
+.main-scrollbar {
+  width: 10px;
+}
+/*#bodyScrollContainer {
+  position: fixed;
+  bottom: 71px;
+  right: 15px;
+  width: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(8px);
+  background: rgba(20, 20, 20, 0.3);
+  border-radius: 12px;
+  padding: 6px;
+  z-index: 1;
+}
+#bodyScroll {
+  flex: 1;
+  width: 8px;
+  margin: 4px 0;
+  writing-mode: vertical-lr;
+  appearance: none;
+  background: transparent;
+  transform: scale(1);
+}
+#bodyScroll::-webkit-slider-runnable-track {
+  width: 8px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+}
+#bodyScroll::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#bodyScroll::-webkit-slider-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+#bodyScrollContainer {
+  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+}
+#bodyScroll::-webkit-slider-thumb {
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}*/

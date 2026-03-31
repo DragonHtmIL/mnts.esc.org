@@ -9,190 +9,196 @@
   <link rel="stylesheet" href="index_data/styles/styles.css">
 </head>
 <body>
-  <header class="header">
-    <h1 class="title-page" id="title">...</h1>
-  </header>
-  <div id="navbar">
-    <input type="search" id="searchBar" placeholder="..." onchange="searchEvents();" oninput="searchEvents();">
-    <button id="openSettings"><div class="text-effect"></div></button>
-    <button id="infouse"><div class="text-effect"></div></button>
-  </div>
-  <div id="settingsModal" class="modal">
-    <div class="modal-content">
-      <div class="settings-header-spacer"><h3 id="settingsHeaderTitle">...</h3></div>
-      <div class="setting-title" id="langs">...</div>
-      <div class="buttons-list">
-        <button id="english" class="lang-btn" onclick="setActiveEn();checkSettingsChanges();">...</button>
-        <button id="russian" class="lang-btn" onclick="setActiveRu();checkSettingsChanges();">...</button>
-        <button id="hebrew" class="lang-btn" onclick="setActiveHe();checkSettingsChanges();">...</button>
-      </div>
-      <hr>
-      <div class="setting-title" id="themeTitle">...</div>
-      <div class="buttons-list">
-        <button id="lightTheme" class="theme-btn" onclick="setThemeLight();checkSettingsChanges();">...</button>
-        <button id="darkTheme" class="theme-btn" onclick="setThemeDark();checkSettingsChanges();">...</button>
-      </div>
-      <hr>
-      <button id="exportEvents">...</button>
-      <button id="importButton">...</button>
-      <input type="file" id="importFile" accept=".json" style="display:none">
-      <button id="checkUpdatesBtn" onclick="checkForUpdatesManual();">...</button>
-      <button id="exitAppBtn" onclick="exitApp();">...</button>
-      <button id="restartAppBtn" onclick="restartApp();">...</button>
-      <hr>
-      <button id="settingsApplyer" class="apply-text" style="display: none;" onclick="applySettings();">...</button>
-      <button id="closeSettings" class="close-text">...</button>
+  <div id="subBudy" class="sub-body">
+    <header class="header">
+      <h1 class="title-page" id="title">...</h1>
+    </header>
+    <div id="navbar">
+      <input type="search" id="searchBar" placeholder="..." onchange="searchEvents();" oninput="searchEvents();">
+      <button id="openSettings"><div class="text-effect"></div></button>
+      <button id="infouse"><div class="text-effect"></div></button>
     </div>
-  </div>
-  <button id="openModal"><div class="button-bg">🗓️</div><div class="plus-sign">+</div></button>
-  <div id="emptyState" class="empty-state">
-    <p id="emptyTextp">...</p>
-    <small id="emptyTextSmall">...</small>
-  </div>
-  <div id="eventModal" class="modal">
-    <div class="modal-content">
-      <h3 id="modalTitle">...</h3>
-      <input id="eventTitle" placeholder="..." required>
-      <textarea id="eventDesc" placeholder="..." style="resize: vertical;"></textarea>
-      <div id="dateContainer">
-        <input id="eventDate" type="datetime-local" required><span id="requiredText">...</span>
-      </div>
-      <input id="eventName" placeholder="...">
-      <input id="eventLink" placeholder="...">
-      <div class="important-container">
-        <label for="eventAutoDelete" id="autoDeleteLabel">...</label>
-        <input type="number" id="eventAutoDelete" min="0" value="0">
-      </div>
-      <div class="important-container">
-        <input type="checkbox" id="eventRepeat" onchange="toggleRepeatOptions();">
-        <label for="eventRepeat" id="repeatLabel">...</label>
-      </div>
-      <div id="repeatOptions" style="display: none;">
-        <div class="important-container">
-          <label for="repeatFrequency" id="repeatFrequencyLabel">...</label>
-          <select id="repeatFrequency" onchange="toggleRepeatOptions();">
-            <option value="day" id="optDay">...</option>
-            <option value="month" id="optMonth">...</option>
-            <option value="year" id="optYear">...</option>
-          </select>
+    <div id="settingsModal" class="modal">
+      <div class="modal-content">
+        <div class="settings-header-spacer"><h3 id="settingsHeaderTitle">...</h3></div>
+        <div class="setting-title" id="langs">...</div>
+        <div class="buttons-list">
+          <button id="english" class="lang-btn" onclick="setActiveEn();checkSettingsChanges();">...</button>
+          <button id="russian" class="lang-btn" onclick="setActiveRu();checkSettingsChanges();">...</button>
+          <button id="hebrew" class="lang-btn" onclick="setActiveHe();checkSettingsChanges();">...</button>
         </div>
-        <div class="important-container" id="repeatTimeContainer">
-          <label for="repeatTime" id="repeatTimeLabel">...</label>
-          <input type="time" id="repeatTime" value="00:00">
+        <hr>
+        <div class="setting-title" id="themeTitle">...</div>
+        <div class="buttons-list">
+          <button id="lightTheme" class="theme-btn" onclick="setThemeLight();checkSettingsChanges();">...</button>
+          <button id="darkTheme" class="theme-btn" onclick="setThemeDark();checkSettingsChanges();">...</button>
         </div>
-        <div class="important-container" id="repeatDayContainer" style="display: none;">
-          <label for="repeatDay" id="repeatDayLabel">...</label>
-          <input type="number" id="repeatDay" min="1" max="31" value="1">
-        </div>
-        <div class="important-container" id="repeatMonthContainer" style="display: none;">
-          <label for="repeatMonth" id="repeatMonthLabel">...</label>
-          <select id="repeatMonth">
-            <option value="1" id="m1">...</option>
-            <option value="2" id="m2">...</option>
-            <option value="3" id="m3">...</option>
-            <option value="4" id="m4">...</option>
-            <option value="5" id="m5">...</option>
-            <option value="6" id="m6">...</option>
-            <option value="7" id="m7">...</option>
-            <option value="8" id="m8">...</option>
-            <option value="9" id="m9">...</option>
-            <option value="10" id="m10">...</option>
-            <option value="11" id="m11">...</option>
-            <option value="12" id="m12">...</option>
-          </select>
-        </div>
-      </div>
-      <div class="important-container">
-        <input type="checkbox" id="eventImportant">
-        <label for="eventImportant" id="importantLabel">...</label>
-      </div>
-      <button id="saveEvent" class="save-text">...</button>
-      <button id="closeModal" class="cancel-text">...</button>
-    </div>
-  </div>
-  <div id="useinfoModal" class="modal">
-    <div class="modal-content">
-      <div id="useInfoText"></div>
-      <button id="closeUseInfo" class="close-text">...</button>
-    </div>
-  </div>
-  <div id="versionModal" class="modal">
-    <div class="modal-content">
-      <div id="versionTitleLang"></div>
-      <div id="versionContent"></div>
-      <button id="closeVersion" class="close-text">...</button>
-    </div>
-  </div>
-  <div id="modalNotify" class="modal">
-    <div class="modal-content">
-      <h3 id="notificationTitle">...</h3>
-      <p id="notificationMessage">...</p>
-      <button id="closeNotifyModal" class="close-text">...</button>
-      <div class="confirm-buttons" style="display: none;">
-        <button id="confirmYes" class="yes-text">...</button>
-        <button id="confirmNo" class="no-text">...</button>
+        <hr>
+        <button id="exportEvents">...</button>
+        <button id="importButton">...</button>
+        <input type="file" id="importFile" accept=".json" style="display:none">
+        <button id="checkUpdatesBtn" onclick="checkForUpdatesManual();">...</button>
+        <button id="exitAppBtn" onclick="exitApp();">...</button>
+        <button id="restartAppBtn" onclick="restartApp();">...</button>
+        <hr>
+        <button id="settingsApplyer" class="apply-text" style="display: none;" onclick="applySettings();">...</button>
+        <button id="closeSettings" class="close-text">...</button>
       </div>
     </div>
-  </div>
-  <div id="eventsContainer"></div>
-  <script src="index_data/scripts/updater.js"></script>
-  <script src="index_data/scripts/restart.js"></script>
-  <script src="index_data/scripts/exit.js"></script>
-  <script src="index_data/scripts/registrations.js"></script>
-  <script src="index_data/scripts/modal_edit.js"></script>
-  <script src="index_data/scripts/modals_closers.js"></script>
-  <script src="index_data/scripts/modals_openers.js"></script>
-  <script src="index_data/scripts/get_next_event_index.js"></script>
-  <script src="index_data/scripts/save_event.js"></script>
-  <script src="index_data/scripts/render_events.js"></script>
-  <script src="index_data/scripts/create_event_card.js"></script>
-  <script src="index_data/scripts/timer.js"></script>
-  <script src="index_data/scripts/languages_text_loader.js"></script>
-  <script src="index_data/scripts/set_languages_buttons_active.js"></script>
-  <script src="index_data/scripts/check_settings_changes.js"></script>
-  <script src="index_data/scripts/apply_settings.js"></script>
-  <script src="index_data/scripts/export_data.js"></script>
-  <script src="index_data/scripts/import_data.js"></script>
-  <script src="index_data/scripts/mask_clicked.js"></script>
-  <script src="index_data/scripts/search_events.js"></script>
-  <!-- importants be bottom and last -->
-  <script src="index_data/scripts/notifications.js"></script>
-  <script src="index_data/scripts/window/dom_content_loaded.js"></script>
-  <script src="index_data/scripts/window/error.js"></script>
-  <script src="index_data/scripts/window/load.js"></script>
-  <script>
-    function toggleRepeatOptions() {
-      const isRepeat = document.getElementById("eventRepeat").checked;
-      const repeatOptions = document.getElementById("repeatOptions");
-      const dateContainer = document.getElementById("dateContainer");
-      const frequency = document.getElementById("repeatFrequency").value;
-
-      const timeContainer = document.getElementById("repeatTimeContainer");
-      const dayContainer = document.getElementById("repeatDayContainer");
-      const monthContainer = document.getElementById("repeatMonthContainer");
-
-      if (isRepeat) {
-        repeatOptions.style.display = "block";
-        dateContainer.style.display = "none";
-
-        // Show time for all repeat modes
-        timeContainer.style.display = "flex";
-
-        if (frequency === "day") {
-          dayContainer.style.display = "none";
-          monthContainer.style.display = "none";
-        } else if (frequency === "month") {
-          dayContainer.style.display = "flex";
-          monthContainer.style.display = "none";
-        } else if (frequency === "year") {
-          dayContainer.style.display = "flex";
-          monthContainer.style.display = "flex";
+    <div class="scrollbar-container" id="bodyScrollContainer" style="display:none;">
+      <label for="bodyScroll" id="scrollbarLabel" style="display: none;"><!--For Avoid Error "The input has no value attribute label"--></label>
+      <input type="range" name="mainscrollbar" id="bodyScroll" value="0">
+    </div>
+    <button id="openModal"><div class="button-bg">🗓️</div><div class="plus-sign">+</div></button>
+    <div id="emptyState" class="empty-state">
+      <p id="emptyTextp">...</p>
+      <small id="emptyTextSmall">...</small>
+    </div>
+    <div id="eventModal" class="modal">
+      <div class="modal-content">
+        <h3 id="modalTitle">...</h3>
+        <div class="in-modal-content">
+          <input id="eventTitle" placeholder="..." required>
+          <textarea id="eventDesc" placeholder="..." style="resize: vertical;"></textarea>
+          <div id="dateContainer" style="height: 45px;">
+            <input id="eventDate" type="datetime-local" required><span id="requiredText">...</span>
+          </div>
+          <input id="eventName" placeholder="...">
+          <input id="eventLink" placeholder="...">
+          <div class="important-container" id="autoDeleteContainer">
+            <label for="eventAutoDelete" id="autoDeleteLabel">...</label>
+            <input type="number" id="eventAutoDelete" min="0" value="0">
+          </div>
+          <hr>
+          <div class="important-container">
+            <input type="checkbox" id="eventRepeat" onchange="toggleRepeatOptions();">
+            <label for="eventRepeat" id="repeatLabel">...</label>
+          </div>
+          <div id="repeatOptions" style="height: 0px;">
+            <div class="important-container">
+              <label for="repeatFrequency" id="repeatFrequencyLabel">...</label>
+              <select id="repeatFrequency" onchange="toggleRepeatOptions();">
+                <option value="day" id="optDay">...</option>
+                <option value="month" id="optMonth">...</option>
+                <option value="year" id="optYear">...</option>
+              </select>
+            </div>
+            <div class="important-container" id="repeatTimeContainer">
+              <label for="repeatTime" id="repeatTimeLabel">...</label>
+              <input type="time" id="repeatTime" value="00:00">
+            </div>
+            <div class="important-container" id="repeatDayContainer" style="display: none;">
+              <label for="repeatDay" id="repeatDayLabel">...</label>
+              <input type="number" id="repeatDay" min="1" max="31" value="1">
+            </div>
+            <div class="important-container" id="repeatMonthContainer" style="display: none;">
+              <label for="repeatMonth" id="repeatMonthLabel">...</label>
+              <select id="repeatMonth">
+                <option value="1" id="m1">...</option>
+                <option value="2" id="m2">...</option>
+                <option value="3" id="m3">...</option>
+                <option value="4" id="m4">...</option>
+                <option value="5" id="m5">...</option>
+                <option value="6" id="m6">...</option>
+                <option value="7" id="m7">...</option>
+                <option value="8" id="m8">...</option>
+                <option value="9" id="m9">...</option>
+                <option value="10" id="m10">...</option>
+                <option value="11" id="m11">...</option>
+                <option value="12" id="m12">...</option>
+              </select>
+            </div>
+          </div>
+          <hr>
+          <div class="important-container">
+            <input type="checkbox" id="eventImportant">
+            <label for="eventImportant" id="importantLabel">...</label>
+          </div>
+          <button id="saveEvent" class="save-text">...</button>
+          <button id="closeModal" class="cancel-text">...</button>
+        </div>
+      </div>
+    </div>
+    <div id="useinfoModal" class="modal">
+      <div class="modal-content">
+        <div id="useInfoText"></div>
+        <button id="closeUseInfo" class="close-text">...</button>
+      </div>
+    </div>
+    <div id="versionModal" class="modal">
+      <div class="modal-content">
+        <div id="versionTitleLang"></div>
+        <div id="versionContent"></div>
+        <button id="closeVersion" class="close-text">...</button>
+      </div>
+    </div>
+    <div id="modalNotify" class="modal">
+      <div class="modal-content">
+        <h3 id="notificationTitle">...</h3>
+        <p id="notificationMessage">...</p>
+        <button id="closeNotifyModal" class="close-text">...</button>
+        <div class="confirm-buttons" style="display: none;">
+          <button id="confirmYes" class="yes-text">...</button>
+          <button id="confirmNo" class="no-text">...</button>
+        </div>
+      </div>
+    </div>
+    <div id="eventsContainer"></div>
+    <script src="index_data/scripts/updater.js"></script>
+    <script src="index_data/scripts/restart.js"></script>
+    <script src="index_data/scripts/exit.js"></script>
+    <script src="index_data/scripts/registrations.js"></script>
+    <script src="index_data/scripts/modal_edit.js"></script>
+    <script src="index_data/scripts/modals_closers.js"></script>
+    <script src="index_data/scripts/modals_openers.js"></script>
+    <script src="index_data/scripts/get_next_event_index.js"></script>
+    <script src="index_data/scripts/save_event.js"></script>
+    <script src="index_data/scripts/render_events.js"></script>
+    <script src="index_data/scripts/create_event_card.js"></script>
+    <script src="index_data/scripts/timer.js"></script>
+    <script src="index_data/scripts/languages_text_loader.js"></script>
+    <script src="index_data/scripts/set_languages_buttons_active.js"></script>
+    <script src="index_data/scripts/check_settings_changes.js"></script>
+    <script src="index_data/scripts/apply_settings.js"></script>
+    <script src="index_data/scripts/export_data.js"></script>
+    <script src="index_data/scripts/import_data.js"></script>
+    <script src="index_data/scripts/mask_clicked.js"></script>
+    <script src="index_data/scripts/search_events.js"></script>
+    <script src="index_data/scripts/is_mobile.js"></script>
+    <!-- importants be bottom and last -->
+    <script src="index_data/scripts/notifications.js"></script>
+    <script src="index_data/scripts/window/dom_content_loaded.js"></script>
+    <script src="index_data/scripts/window/error.js"></script>
+    <script src="index_data/scripts/window/load.js"></script>
+    <script>
+      function toggleRepeatOptions() {
+        const isRepeat = document.getElementById("eventRepeat").checked;
+        const repeatOptions = document.getElementById("repeatOptions");
+        const dateContainer = document.getElementById("dateContainer");
+        const frequency = document.getElementById("repeatFrequency").value;
+        const timeContainer = document.getElementById("repeatTimeContainer");
+        const dayContainer = document.getElementById("repeatDayContainer");
+        const monthContainer = document.getElementById("repeatMonthContainer");
+        if (isRepeat) {
+          repeatOptions.style.height = "111px";
+          dateContainer.style.height = "0px";
+          timeContainer.style.display = "flex";
+          if (frequency === "day") {
+            dayContainer.style.display = "none";
+            monthContainer.style.display = "none";
+          } else if (frequency === "month") {
+            dayContainer.style.display = "flex";
+            monthContainer.style.display = "none";
+          } else if (frequency === "year") {
+            dayContainer.style.display = "flex";
+            monthContainer.style.display = "flex";
+          }
+        } else {
+          repeatOptions.style.height = "0px";
+          dateContainer.style.height = "45px";
         }
-      } else {
-        repeatOptions.style.display = "none";
-        dateContainer.style.display = "flex";
-      }
-    }
-  </script>
+      };
+    </script>
+  </div>
 </body>
 </html>

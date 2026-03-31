@@ -33,6 +33,7 @@ function loadTexts() {
   var a031 = document.getElementById("repeatDayLabel");
   var a032 = document.getElementById("repeatMonthLabel");
   var a033 = document.getElementById("checkUpdatesBtn");
+  var a034 = document.getElementById("repeatOptions");
 
   const a000_set = document.getElementsByClassName("close-text");
   const a001_set = document.getElementsByClassName("cancel-text");
@@ -40,6 +41,7 @@ function loadTexts() {
   const a003_set = document.getElementsByClassName("apply-text");
   const a004_set = document.getElementsByClassName("yes-text");
   const a005_set = document.getElementsByClassName("no-text");
+  const a006_set = document.getElementsByClassName("important-container");
 
   let lang = localStorage.getItem("lang");
   if (!lang) {
@@ -244,9 +246,7 @@ function loadTexts() {
         a016.style.textAlign = "right";
         a016.style.direction = "rtl";
     }
-    if (a017) {
-        a017.innerHTML = "יציאה";
-    }
+    if (a017) a017.innerHTML = "יציאה";
     if (a018) {
         a018.innerHTML = "נושא";
         a018.style.textAlign = "right";
@@ -257,15 +257,8 @@ function loadTexts() {
       a021.placeholder = "חיפוש...";
       a021.style.direction = "rtl";
     }
-    if (a022) {
-      a022.placeholder = "קישור לאתר (אופציונלי)";
-      a022.style.textAlign = "right";
-    }
-    if (a023) {
-      a023.innerHTML = "הפעל מחדש";
-      a023.style.textAlign = "right";
-      a023.style.direction = "rtl";
-    }
+    if (a022) a022.placeholder = "קישור לאתר (אופציונלי)";
+    if (a023) a023.innerHTML = "הפעל מחדש";
     if (a024) {
       a024.innerHTML = "מחיקה אוטומטית של האירוע (שעות):";
       a024.style.textAlign = "right";
@@ -288,6 +281,7 @@ function loadTexts() {
     if (a031) a031.innerHTML = "ביום:";
     if (a032) a032.innerHTML = "בחודש:";
     if (a033) a033.innerHTML = "בדוק עדכונים";
+    if (a034) a034.style.direction = "rtl";
     setMonths(months_he);
 
     for (let i = 0; i < a000_set.length; i++) {
@@ -307,6 +301,9 @@ function loadTexts() {
     }
     for (let i = 0; i < a005_set.length; i++) {
       a005_set[i].textContent = "לא";
+    }
+    for (let i = 0; i < a006_set.length; i++) {
+      a006_set[i].style.direction = "rtl";
     }
     if (a006) a006.classList.add("active");
   }
