@@ -3,6 +3,7 @@
 <a href="https://github.com/DragonHtmIL/mnts.esc.org?tab=readme-ov-file#%D7%A2%D7%91%D7%A8%D7%99%D7%AA">עברית</a>
 <hr>
 <h4>English</h4><br>
+<a href="https://github.com/DragonHtmIL/mnts.esc.org/releases/tag/eventscreator">Release</a><br>
 This app use HTML, CSS and JS files for display your events.
 <br>
 <div>Project created with Android Studio Panda.</div>
@@ -32,6 +33,7 @@ Ideas: ArthurVesta(DragonHtmIL).<br>
 <hr>
 
 <h4>Русский</h4><br>
+<a href="https://github.com/DragonHtmIL/mnts.esc.org/releases/tag/eventscreator">Release</a><br>
 Это приложение использует файлы HTML, CSS и JS для отображения ваших событий.
 <br>
 <div>Проект создан с использованием Android Studio Panda.</div>
@@ -61,6 +63,7 @@ Ideas: ArthurVesta(DragonHtmIL).<br>
 <hr>
 
 <h4>עברית</h4><br>
+<a href="https://github.com/DragonHtmIL/mnts.esc.org/releases/tag/eventscreator">Release</a><br>
 <div style="text-align: right; direction: rtl;">
 האפליקציה הזו משתמשת בקבצי HTML, CSS ו-JS כדי להציג את האירועים שלך.
 <br>
