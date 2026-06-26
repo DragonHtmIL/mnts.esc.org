@@ -1,1 +1,1 @@
-in version 1.2.0: Some fixes.
+in version 1.2.0: Some fixes and Android 17 support.
