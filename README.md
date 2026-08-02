@@ -27,7 +27,7 @@ This app use HTML, CSS and JS files for display your events.
 <div>Do repeated events by day, month or year (Latest).</div>
 <br>
 Credits:<br>
-<div>App Icon by <a href="https://www.freepik.com/icon/add-event_7477497" title="countdown icons">Freepik</a></div>
+<div>App Icon from <a href="https://www.freepik.com/icon/add-event_7477497" title="countdown icons">Freepik</a></div>
 Codes: By AI GPT and Gemini.<br>
 Ideas: ArthurVesta(DragonHtmIL).<br>
 <hr>
@@ -57,7 +57,7 @@ Ideas: ArthurVesta(DragonHtmIL).<br>
 <div>Создание повторяющихся событий по дням, месяцам или годам (последняя).</div>
 <br>
 Кредиты:<br>
-<div>Иконка приложения от <a href="https://www.freepik.com/icon/add-event_7477497" title="countdown icons">Freepik</a></div>
+<div>Иконка приложения из <a href="https://www.freepik.com/icon/add-event_7477497" title="countdown icons">Freepik</a></div>
 Коды: От AI GPT and Gemini.<br>
 Идеи: ArthurVesta(DragonHtmIL).<br>
 <hr>
@@ -88,7 +88,7 @@ Ideas: ArthurVesta(DragonHtmIL).<br>
 <div>יצירת אירועים חוזרים לפי יום, חודש או שנה (אחרון).</div>
 <br>
 קרדיטים:<br>
-<div>אייקון האפליקציה מאת <a href="https://www.freepik.com/icon/add-event_7477497" title="countdown icons">Freepik</a></div>
+<div>אייקון האפליקציה מ<a href="https://www.freepik.com/icon/add-event_7477497" title="countdown icons">Freepik</a></div>
 קודים: על ידי AI GPT ו-Gemini.<br>
 רעיונות: ArthurVesta(DragonHtmIL).<br>
 </div>
