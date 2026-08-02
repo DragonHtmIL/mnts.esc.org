@@ -1,1 +1,1 @@
-in version 1.2.0: Events backed up to the cloud automatically sync within the app across other devices, and fixed an issue where events were deleted from the backup file.
+in version 1.2.0.0001: Events backed up to the cloud automatically sync within the app across other devices, and fixed an issue where events were deleted from the backup file.
