@@ -30,12 +30,12 @@ The events will be displayed with a live countdown timer and notify for events.<
 Credits:<br>
 <div>App Icon from <a href="https://www.freepik.com/icon/add-event_7477497" title="countdown icons">Freepik</a></div>
 Codes: By AI GPT and Gemini.<br>
-Ideas: ArthurVesta(DragonHtmIL).<br>
+Ideas: ArthurVesta(MNTS).<br>
 <hr>
 
 <h4>Русский</h4><br>
 <a href="https://github.com/DragonHtmIL/mnts.esc.org/releases/tag/eventscreator">Release</a><br>
-Это приложение использует файлы HTML, CSS и JS для отображения ваших событий.
+Это приложение использует файлы HTML, CSS, JS и JSON для отображения ваших событий.
 <br>
 <div>Проект создан с использованием Android Studio Panda.</div>
 <br>
@@ -56,20 +56,20 @@ Ideas: ArthurVesta(DragonHtmIL).<br>
 <div>Поиск между событиями.</div>
 <div>Светлые/Темные темы.</div>
 <div>Добавление ссылки на сайт источника.</div>
-<div>Создание повторяющихся событий по дням, месяцам или годам.</div>
+<div>Повтор событий по дням, месяцам, годам или каждые N дней.</div>
 <br>
 Кредиты:<br>
 <div>Иконка приложения из <a href="https://www.freepik.com/icon/add-event_7477497" title="countdown icons">Freepik</a></div>
 Коды: От AI GPT and Gemini.<br>
-Идеи: ArthurVesta(DragonHtmIL).<br>
+Идеи: ArthurVesta(MNTS).<br>
 <hr>
 
 <h4>עברית</h4><br>
 <a href="https://github.com/DragonHtmIL/mnts.esc.org/releases/tag/eventscreator">Release</a><br>
 <div style="text-align: right; direction: rtl;">
-האפליקציה הזו משתמשת בקבצי HTML, CSS ו-JS כדי להציג את האירועים שלך.
+האפליקציה הזו משתמשת בקבצי HTML, CSS, JS ו-JSON כדי להציג את האירועים שלכם.
 <br>
-<div>הפרויקט נוצר עם Android Studio Panda.</div>
+<div>הפרויקט נוצר עם Android Studio.</div>
 <br>
 <h3>שפות נתמכות:</h3>
 <div>אנגלית</div>
@@ -77,7 +77,7 @@ Ideas: ArthurVesta(DragonHtmIL).<br>
 <div>רוסית</div>
 <br>
 <h3>על האפליקציה:</h3>
-<div>אפליקציה זו מאפשרת לך ליצור ולנהל ספירות לאחור עבור המשחקים האהובים עליך, שחרורי אנימה או אירועים חשובים כמו תור לרופא. ניתן להוסיף אירועים עם כותרות, תיאורים, תאריכים, שמות משחקים או אנימה מקושרים, חזרות על אירועים, מעקף של מצב "נא לא להפריע" / שקט, התראות לפני כל מועד ועוד פונקציות כדי להפוך את יצירת האירועים לנוחה ומצוינת יותר.<br>
+<div>אפליקציה זו מאפשרת לכם ליצור ולנהל ספירות לאחור עבור המשחקים האהובים עליכם, שחרורי אנימה או אירועים חשובים כמו תור לרופא. ניתן להוסיף אירועים עם כותרות, תיאורים, תאריכים, שמות משחקים או אנימה מקושרים, חזרות על אירועים, מעקף של מצב "נא לא להפריע" / שקט, התראות לפני כל מועד ועוד פונקציות כדי להפוך את יצירת האירועים לנוחה ומצוינת יותר.<br>
 האירועים יוצגו עם טיימר ספירה לאחור בזמן אמת והתראות בזמן.<br></div>
 <div>אפליקציה זו נוצרה בעזרת בינה מלאכותית ופותחה לרשת על ידי ArthurVesta‏ (MNTS) והיא בקוד פתוח.</div>
 <br>
@@ -88,10 +88,10 @@ Ideas: ArthurVesta(DragonHtmIL).<br>
 <div>חיפוש בין האירועים.</div>
 <div>נושאים בהירים/כהים.</div>
 <div>הוספת קישור לאתר המקור.</div>
-<div>יצירת אירועים חוזרים לפי יום, חודש או שנה.</div>
+<div>חזרה על אירועים לפי יום, חודש, שנה או כל N ימים.</div>
 <br>
 קרדיטים:<br>
 <div>אייקון האפליקציה מ<a href="https://www.freepik.com/icon/add-event_7477497" title="countdown icons">Freepik</a></div>
 קודים: על ידי AI GPT ו-Gemini.<br>
-רעיונות: ArthurVesta(DragonHtmIL).<br>
+רעיונות: ArthurVesta(MNTS).<br>
 </div>
