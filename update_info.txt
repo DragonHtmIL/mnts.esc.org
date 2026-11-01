@@ -1,1 +1,1 @@
-in version 1.2.1.0002: Some fixes and Changes.
+in version 1.2.2: PopUp notifications opens links specified by press on them.
